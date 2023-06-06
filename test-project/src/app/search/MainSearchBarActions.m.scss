@@ -1,0 +1,18 @@
+.count {
+  color: #999;
+  padding-left: 8px;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
+}
+
+.resultButton {
+  composes: filterBarButton from '../search/SearchBar.m.scss';
+  display: flex;
+  align-items: center;
+
+  > span:first-child {
+    margin-right: 4px !important;
+  }
+}

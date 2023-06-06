@@ -1,0 +1,192 @@
+@use '../variables.scss' as *;
+
+.singleCharacter {
+  --num-characters: 1;
+}
+
+.inventory-content {
+  width: 100%;
+
+  // Prevent collapsing at smaller than iPad landscape sizes
+  min-width: calc(
+    (var(--num-characters) + 1) *
+      (var(--inventory-column-padding) * 2 + var(--character-column-width))
+  );
+  @include phone-portrait {
+    min-width: auto;
+    // Give room for the category selector strip (height 53px)
+    padding-bottom: calc(#{53px + 10px} + env(safe-area-inset-bottom));
+  }
+
+  .body-scroll-lock & {
+    margin-top: var(--store-header-height);
+  }
+}
+
+.store-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns:
+    repeat(
+      var(--num-characters),
+      calc(#{$equipped-item-total-outset} + var(--character-column-width) + var(--column-padding))
+    )
+    // Vault takes the rest
+    1fr;
+  box-sizing: border-box;
+  padding-right: calc(var(--sidebar-size) * var(--expanded-sidebars));
+
+  // Split evenly between character and vault
+  .singleCharacter &.account-wide {
+    grid-template-columns: 1fr 1fr;
+    .singleCharacter & {
+      grid-column: auto;
+    }
+  }
+
+  @include phone-portrait {
+    // Full-width, single column
+    display: block;
+    padding-right: 0;
+  }
+}
+
+.equipped-item {
+  border: $equipped-item-border solid #ddd;
+  height: fit-content;
+  padding: $equipped-item-padding;
+}
+
+.store-cell {
+  display: flex;
+  flex-direction: row;
+  padding: 0 var(--inventory-column-padding);
+  box-sizing: border-box;
+
+  &.vault {
+    min-width: calc(var(--character-column-width) + var(--inventory-column-padding));
+    @include phone-portrait {
+      min-width: auto;
+    }
+  }
+
+  &.account-wide {
+    grid-column: 1 / span var(--num-characters);
+    .singleCharacter & {
+      grid-column: auto;
+    }
+  }
+
+  > div {
+    white-space: normal;
+  }
+
+  // Postmaster - items above, collect button below
+  .bucket-215593132 & {
+    flex-direction: column;
+  }
+
+  .store-header & {
+    padding: 16px var(--inventory-column-padding) 6px var(--inventory-column-padding);
+    flex-direction: column;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  // Engrams. D1 uses this same bucket hash for "Missions"
+  .destiny2 .bucket-375726501 & {
+    --engram-size: calc(var(--character-column-width) / 10);
+    padding-bottom: 8px;
+
+    .empty-engram {
+      border: $item-border-width solid transparent;
+      box-sizing: border-box;
+      height: var(--item-size);
+      width: var(--item-size);
+    }
+
+    .sub-bucket {
+      min-height: 0;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 0;
+      padding: 4px 0 0 0;
+      @include phone-portrait {
+        padding: 4px 0;
+      }
+    }
+
+    .item-drag-container,
+    .empty-engram {
+      --item-size: var(--engram-size);
+      @include phone-portrait {
+        --item-size: calc((100vw - (2 * var(--inventory-column-padding))) / 10);
+      }
+    }
+  }
+
+  // Subclasses
+  .destiny2 .bucket-3284755031 & {
+    // hide normal "equipped" effects
+    .equipped-item {
+      border: $item-border-width solid transparent;
+      padding-top: 0;
+    }
+
+    .item-drag-container:hover {
+      // don't display the default outline when hovering over a draggable subclass item
+      outline: none;
+
+      // allow the pseudo-element to render outside the bounds of the item
+      contain: layout style;
+
+      // render a diamond-shaped pseudo-element to act as the border
+      &::before {
+        @include draggable-hover-border;
+        content: '';
+        position: absolute;
+        width: var(--item-size);
+        height: var(--item-size);
+        transform: rotate(45deg) scale(0.7);
+        outline-width: 2px;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+
+.store-header {
+  position: fixed;
+  backface-visibility: hidden;
+  @include below-header;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  grid-template-columns:
+    repeat(var(--num-characters), calc(6px + var(--character-column-width) + var(--column-padding)))
+    calc(6px + var(--character-column-width) + var(--column-padding)) 1fr !important;
+  background: $gradient;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
+
+  &:focus {
+    outline: none;
+  }
+  @supports (position: sticky) {
+    position: sticky;
+  }
+  .body-scroll-lock & {
+    position: fixed;
+  }
+  &.sticky {
+    box-shadow: 0 1px 4px 0 black;
+  }
+  .phone-portrait & {
+    padding-left: 0;
+    overflow: hidden;
+    .character {
+      margin: 0 5px;
+    }
+  }
+}

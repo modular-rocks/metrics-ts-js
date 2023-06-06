@@ -1,0 +1,152 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Move Popup
+//
+// The popup displaying info and actions for an single item.
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@use '../variables.scss' as *;
+
+.arrow {
+  width: 10px;
+  height: 10px;
+  border-style: solid;
+  position: absolute;
+  border-color: black;
+  z-index: -1;
+}
+
+.desktopPopupRoot {
+  pointer-events: none;
+  .arrow {
+    border-color: #161626;
+  }
+}
+
+.movePopupDialog {
+  // Mod drawer has z-index of 14 and needs to sit over this
+  z-index: 13;
+
+  --background-color: 0, 0%, 0%;
+
+  &.exotic {
+    --background-color: 48, 71%, 5%;
+  }
+  &.legendary {
+    --background-color: 279, 36%, 5%;
+  }
+  &.rare {
+    --background-color: 213, 34%, 6%;
+  }
+  &.uncommon {
+    --background-color: 126, 35%, 5%;
+  }
+  &.common {
+    --background-color: 0, 0%, 7%;
+  }
+
+  &[data-popper-placement^='top'] .arrow {
+    width: 0;
+    height: 0;
+    border-width: 5px 5px 0 5px;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    bottom: -5px;
+  }
+
+  &[data-popper-placement^='bottom'] .arrow {
+    width: 0;
+    height: 0;
+    border-width: 0 5px 5px 5px;
+    top: -5px;
+    border-color: transparent transparent white transparent;
+
+    &.exotic {
+      border-bottom-color: $exotic;
+    }
+    &.legendary {
+      border-bottom-color: $legendary;
+    }
+    &.rare {
+      border-bottom-color: $rare;
+    }
+    &.uncommon {
+      border-bottom-color: $uncommon;
+    }
+    &.common {
+      border-bottom-color: $common;
+    }
+  }
+  &[data-popper-placement^='right'] .arrow {
+    width: 0;
+    height: 0;
+    border-width: 5px 5px 5px 0;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    left: -5px;
+  }
+  &[data-popper-placement^='left'] .arrow {
+    width: 0;
+    height: 0;
+    border-width: 5px 0 5px 5px;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    right: -5px;
+  }
+  textarea {
+    resize: vertical;
+  }
+}
+
+.popupBackground {
+  background-color: #{'hsl(var(--background-color))'};
+  contain: content;
+  box-shadow: 0 -1px 24px 4px #161626;
+  @include phone-portrait {
+    box-shadow: none;
+  }
+}
+
+.desktopPopup {
+  display: flex;
+  flex-direction: row;
+  .movePopupDialog[data-popper-placement^='right'] & {
+    flex-direction: row-reverse;
+  }
+}
+
+.desktopPopupBody {
+  width: 320px;
+  display: block;
+  pointer-events: auto;
+}
+
+.desktopActions {
+  display: block;
+  > div {
+    pointer-events: auto;
+  }
+}
+
+.mobileItemActions {
+  padding: 5px 0;
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  z-index: 1;
+  background: #111;
+  border-bottom: 1px solid #333;
+  border-top: 1px solid #333;
+  &:empty {
+    display: none;
+  }
+}
+
+.mobileMoveLocations {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

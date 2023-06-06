@@ -1,0 +1,70 @@
+/*!
+ * angular-hotkeys v1.7.0
+ * https://chieffancypants.github.io/angular-hotkeys
+ * Copyright (c) 2016 Wes Cruver
+ * License: MIT
+ */
+.container {
+  display: table !important;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: white;
+  font-size: 1em;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2000;
+  @supports (backdrop-filter: blur(5px)) {
+    backdrop-filter: blur(5px);
+  }
+}
+
+.title {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.hotkeys {
+  width: 100%;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 75px minmax(200px, 1fr));
+  margin: 0 auto;
+  max-width: 800px;
+  color: white;
+}
+
+.keys {
+  padding: 5px;
+  text-align: right;
+}
+
+.key {
+  font-size: 1em !important;
+  padding: 4px 6px !important;
+}
+
+.text {
+  padding-left: 10px;
+  font-size: 1em;
+  align-self: center;
+}
+
+@media all and (max-width: 500px) {
+  .hotkeys {
+    font-size: 0.8em;
+  }
+}
+
+@media all and (min-width: 750px) {
+  .hotkeys {
+    font-size: 1.2em;
+  }
+}

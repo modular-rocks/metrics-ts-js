@@ -1,0 +1,34 @@
+@use '../variables.scss' as *;
+
+.buttons {
+  display: grid;
+  grid-template-rows: 46px 1fr;
+  padding: 16px 0 6px 0;
+  align-items: center;
+  width: 70px;
+}
+
+.singleCharacterButton {
+  composes: resetButton from '../dim-ui/common.m.scss';
+
+  color: #9e9db5;
+  font-size: 26px;
+  width: min-content;
+  transition: transform 100ms ease-in-out, color 100ms ease-in-out;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    transform: scale(1.5);
+    color: white;
+  }
+}
+
+.inventoryContainer {
+  :global(.issue-banner-shown) & {
+    padding-bottom: $issue-banner-height;
+    @include phone-portrait {
+      padding-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@use '../variables.scss' as *;
+
+.entry {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 8px;
+
+  > img,
+  > :global(.app-icon) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    width: 24px;
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+.actionButton {
+  composes: entry;
+  cursor: pointer;
+
+  @media (min-width: 541px) {
+    &:hover {
+      background: $orange;
+      color: black;
+      :global(.app-icon) {
+        color: black;
+      }
+    }
+  }
+}
+
+.disabled {
+  filter: contrast(0.5) brightness(0.5);
+  cursor: not-allowed;
+}

@@ -1,0 +1,73 @@
+@use '../variables.scss' as *;
+
+#item-farming {
+  position: fixed;
+  backface-visibility: hidden;
+  bottom: 0;
+  background-color: black;
+  width: 43rem;
+  padding: 0.5rem 1rem;
+  color: #e0e0e0;
+  align-items: center;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  z-index: 6;
+  padding-bottom: Max(0.5rem, env(safe-area-inset-bottom));
+
+  button {
+    color: white;
+    background-color: rgba(128, 128, 128, 0.4);
+    border: none;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-size: 1.5em;
+    margin-left: 1rem;
+    transition: 0.3s background-color;
+    &:hover,
+    &:active {
+      background-color: rgba(232, 165, 52, 0.8);
+    }
+  }
+
+  p {
+    margin: 0.25em 0;
+  }
+
+  &.farming-enter {
+    transform: translateY(250px) translateX(-50%);
+  }
+
+  &.farming-enter.farming-enter-active {
+    transform: translateY(0) translateX(-50%);
+    transition: transform 200ms $easeOutCubic;
+  }
+
+  &.farming-exit {
+    transform: translateY(0) translateX(-50%);
+  }
+
+  &.farming-exit.farming-exit-active {
+    transform: translateY(250px) translateX(-50%);
+    transition: transform 200ms $easeInCubic;
+  }
+
+  @include phone-portrait {
+    width: auto;
+    right: 0;
+    bottom: 50px;
+    left: inherit;
+    transform: none;
+
+    button {
+      margin: 0;
+    }
+    p {
+      display: none;
+    }
+  }
+}

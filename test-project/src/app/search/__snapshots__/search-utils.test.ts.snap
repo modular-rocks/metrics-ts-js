@@ -1,0 +1,325 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateSuggestionsForFilter full suggestions for filter format '[ 'range', 'query' ]', keyword 'energycapacity' with suggestions [
+  'any',    'arc',
+  'solar',  'void',
+  'ghost',  'subclass',
+  'stasis'
+], overload undefined 1`] = `
+[
+  "energycapacity:",
+  "energycapacity:<",
+  "energycapacity:>",
+  "energycapacity:<=",
+  "energycapacity:>=",
+  "energycapacity:",
+  "energycapacity:any",
+  "energycapacity:arc",
+  "energycapacity:solar",
+  "energycapacity:void",
+  "energycapacity:ghost",
+  "energycapacity:subclass",
+  "energycapacity:stasis",
+]
+`;
+
+exports[`generateSuggestionsForFilter full suggestions for filter format 'freeform', keyword 'a' with suggestions [ 'b', 'c' ], overload undefined 1`] = `
+[
+  "a:",
+]
+`;
+
+exports[`generateSuggestionsForFilter full suggestions for filter format 'query', keyword 'a' with suggestions [ 'b', 'c' ], overload undefined 1`] = `
+[
+  "a:",
+  "a:b",
+  "a:c",
+]
+`;
+
+exports[`generateSuggestionsForFilter full suggestions for filter format 'query', keyword 'maxstatvalue' with suggestions [
+  'mobility',  'resilience',
+  'recovery',  'discipline',
+  'intellect', 'strength',
+  'total',     'custom',
+  'any'
+], overload undefined 1`] = `
+[
+  "maxstatvalue:",
+  "maxstatvalue:mobility",
+  "maxstatvalue:resilience",
+  "maxstatvalue:recovery",
+  "maxstatvalue:discipline",
+  "maxstatvalue:intellect",
+  "maxstatvalue:strength",
+  "maxstatvalue:total",
+  "maxstatvalue:custom",
+  "maxstatvalue:any",
+]
+`;
+
+exports[`generateSuggestionsForFilter full suggestions for filter format 'query', keyword 'maxstatvalue' with suggestions [
+  'mobility',  'resilience',
+  'recovery',  'discipline',
+  'intellect', 'strength',
+  'total',     'custom',
+  'any'
+], overload undefined 2`] = `
+[
+  "maxstatvalue:",
+  "maxstatvalue:mobility",
+  "maxstatvalue:resilience",
+  "maxstatvalue:recovery",
+  "maxstatvalue:discipline",
+  "maxstatvalue:intellect",
+  "maxstatvalue:strength",
+  "maxstatvalue:total",
+  "maxstatvalue:custom",
+  "maxstatvalue:any",
+]
+`;
+
+exports[`generateSuggestionsForFilter full suggestions for filter format 'range', keyword 'a' with suggestions undefined, overload { worthy: 10, arrivals: 11 } 1`] = `
+[
+  "a:",
+  "a:<",
+  "a:>",
+  "a:<=",
+  "a:>=",
+  "a:worthy",
+  "a:arrivals",
+]
+`;
+
+exports[`generateSuggestionsForFilter full suggestions for filter format 'range', keyword 'a' with suggestions undefined, overload undefined 1`] = `
+[
+  "a:",
+  "a:<",
+  "a:>",
+  "a:<=",
+  "a:>=",
+]
+`;
+
+exports[`generateSuggestionsForFilter full suggestions for filter format 'stat', keyword 'a' with suggestions [ 'b', 'c' ], overload undefined 1`] = `
+[
+  "a:",
+  "a:b:",
+  "a:b:<",
+  "a:b:>",
+  "a:b:<=",
+  "a:b:>=",
+  "a:c:",
+  "a:c:<",
+  "a:c:>",
+  "a:c:<=",
+  "a:c:>=",
+]
+`;
+
+exports[`generateSuggestionsForFilter full suggestions for filter format 'stat', keyword 'stat' with suggestions [
+  'rpm',             'rof',         'charge',
+  'impact',          'handling',    'range',
+  'stability',       'reload',      'magazine',
+  'aimassist',       'equipspeed',  'shieldduration',
+  'velocity',        'blastradius', 'recoildirection',
+  'drawtime',        'zoom',        'airborne',
+  'accuracy',        'swingspeed',  'guardefficiency',
+  'guardresistance', 'chargerate',  'guardendurance',
+  'ammocapacity',    'mobility',    'resilience',
+  'recovery',        'discipline',  'intellect',
+  'strength',        'total',       'custom',
+  'any'
+], overload undefined 1`] = `
+[
+  "stat:",
+  "stat:rpm:",
+  "stat:rpm:<",
+  "stat:rpm:>",
+  "stat:rpm:<=",
+  "stat:rpm:>=",
+  "stat:rof:",
+  "stat:rof:<",
+  "stat:rof:>",
+  "stat:rof:<=",
+  "stat:rof:>=",
+  "stat:charge:",
+  "stat:charge:<",
+  "stat:charge:>",
+  "stat:charge:<=",
+  "stat:charge:>=",
+  "stat:impact:",
+  "stat:impact:<",
+  "stat:impact:>",
+  "stat:impact:<=",
+  "stat:impact:>=",
+  "stat:handling:",
+  "stat:handling:<",
+  "stat:handling:>",
+  "stat:handling:<=",
+  "stat:handling:>=",
+  "stat:range:",
+  "stat:range:<",
+  "stat:range:>",
+  "stat:range:<=",
+  "stat:range:>=",
+  "stat:stability:",
+  "stat:stability:<",
+  "stat:stability:>",
+  "stat:stability:<=",
+  "stat:stability:>=",
+  "stat:reload:",
+  "stat:reload:<",
+  "stat:reload:>",
+  "stat:reload:<=",
+  "stat:reload:>=",
+  "stat:magazine:",
+  "stat:magazine:<",
+  "stat:magazine:>",
+  "stat:magazine:<=",
+  "stat:magazine:>=",
+  "stat:aimassist:",
+  "stat:aimassist:<",
+  "stat:aimassist:>",
+  "stat:aimassist:<=",
+  "stat:aimassist:>=",
+  "stat:equipspeed:",
+  "stat:equipspeed:<",
+  "stat:equipspeed:>",
+  "stat:equipspeed:<=",
+  "stat:equipspeed:>=",
+  "stat:shieldduration:",
+  "stat:shieldduration:<",
+  "stat:shieldduration:>",
+  "stat:shieldduration:<=",
+  "stat:shieldduration:>=",
+  "stat:velocity:",
+  "stat:velocity:<",
+  "stat:velocity:>",
+  "stat:velocity:<=",
+  "stat:velocity:>=",
+  "stat:blastradius:",
+  "stat:blastradius:<",
+  "stat:blastradius:>",
+  "stat:blastradius:<=",
+  "stat:blastradius:>=",
+  "stat:recoildirection:",
+  "stat:recoildirection:<",
+  "stat:recoildirection:>",
+  "stat:recoildirection:<=",
+  "stat:recoildirection:>=",
+  "stat:drawtime:",
+  "stat:drawtime:<",
+  "stat:drawtime:>",
+  "stat:drawtime:<=",
+  "stat:drawtime:>=",
+  "stat:zoom:",
+  "stat:zoom:<",
+  "stat:zoom:>",
+  "stat:zoom:<=",
+  "stat:zoom:>=",
+  "stat:airborne:",
+  "stat:airborne:<",
+  "stat:airborne:>",
+  "stat:airborne:<=",
+  "stat:airborne:>=",
+  "stat:accuracy:",
+  "stat:accuracy:<",
+  "stat:accuracy:>",
+  "stat:accuracy:<=",
+  "stat:accuracy:>=",
+  "stat:swingspeed:",
+  "stat:swingspeed:<",
+  "stat:swingspeed:>",
+  "stat:swingspeed:<=",
+  "stat:swingspeed:>=",
+  "stat:guardefficiency:",
+  "stat:guardefficiency:<",
+  "stat:guardefficiency:>",
+  "stat:guardefficiency:<=",
+  "stat:guardefficiency:>=",
+  "stat:guardresistance:",
+  "stat:guardresistance:<",
+  "stat:guardresistance:>",
+  "stat:guardresistance:<=",
+  "stat:guardresistance:>=",
+  "stat:chargerate:",
+  "stat:chargerate:<",
+  "stat:chargerate:>",
+  "stat:chargerate:<=",
+  "stat:chargerate:>=",
+  "stat:guardendurance:",
+  "stat:guardendurance:<",
+  "stat:guardendurance:>",
+  "stat:guardendurance:<=",
+  "stat:guardendurance:>=",
+  "stat:ammocapacity:",
+  "stat:ammocapacity:<",
+  "stat:ammocapacity:>",
+  "stat:ammocapacity:<=",
+  "stat:ammocapacity:>=",
+  "stat:mobility:",
+  "stat:mobility:<",
+  "stat:mobility:>",
+  "stat:mobility:<=",
+  "stat:mobility:>=",
+  "stat:resilience:",
+  "stat:resilience:<",
+  "stat:resilience:>",
+  "stat:resilience:<=",
+  "stat:resilience:>=",
+  "stat:recovery:",
+  "stat:recovery:<",
+  "stat:recovery:>",
+  "stat:recovery:<=",
+  "stat:recovery:>=",
+  "stat:discipline:",
+  "stat:discipline:<",
+  "stat:discipline:>",
+  "stat:discipline:<=",
+  "stat:discipline:>=",
+  "stat:intellect:",
+  "stat:intellect:<",
+  "stat:intellect:>",
+  "stat:intellect:<=",
+  "stat:intellect:>=",
+  "stat:strength:",
+  "stat:strength:<",
+  "stat:strength:>",
+  "stat:strength:<=",
+  "stat:strength:>=",
+  "stat:total:",
+  "stat:total:<",
+  "stat:total:>",
+  "stat:total:<=",
+  "stat:total:>=",
+  "stat:custom:",
+  "stat:custom:<",
+  "stat:custom:>",
+  "stat:custom:<=",
+  "stat:custom:>=",
+  "stat:any:",
+  "stat:any:<",
+  "stat:any:>",
+  "stat:any:<=",
+  "stat:any:>=",
+]
+`;
+
+exports[`generateSuggestionsForFilter full suggestions for filter format 'undefined', keyword '[ 'a' ]' with suggestions undefined, overload undefined 1`] = `
+[
+  "is:a",
+  "not:a",
+]
+`;
+
+exports[`generateSuggestionsForFilter full suggestions for filter format 'undefined', keyword '[ 'a', 'b', 'c' ]' with suggestions undefined, overload undefined 1`] = `
+[
+  "is:a",
+  "not:a",
+  "is:b",
+  "not:b",
+  "is:c",
+  "not:c",
+]
+`;

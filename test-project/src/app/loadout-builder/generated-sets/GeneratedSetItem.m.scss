@@ -1,0 +1,104 @@
+@use '../../variables.scss' as *;
+
+.item {
+  display: grid;
+  grid-template-areas: 'item sockets';
+  gap: 6px;
+  width: min-content;
+  align-items: start;
+  justify-content: start;
+  margin-top: 4px;
+
+  > *:first-child {
+    grid-area: item;
+  }
+
+  :global {
+    .item-socket-category {
+      margin-right: 0;
+      margin-bottom: 8px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .sockets {
+      grid-area: sockets;
+      flex-direction: column;
+    }
+
+    .item-sockets {
+      flex-wrap: nowrap;
+    }
+    .item-socket {
+      margin-right: 2px;
+    }
+    .item-socket-category-Reusable .item-socket {
+      border: none;
+      padding: 0;
+    }
+
+    .item-details {
+      clear: both;
+      margin: 0;
+    }
+
+    .item-socket-category-name {
+      display: none;
+    }
+
+    .item-drag-container {
+      flex-shrink: 0;
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.energySwapContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 10px;
+}
+
+.arrow {
+  margin: 0 4px;
+}
+
+.energyValue {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.energyIcon {
+  height: 10px;
+  width: 10px;
+  margin-left: 1px;
+}
+
+.masterworked {
+  color: $masterwork-border-color;
+}
+
+.swapButton {
+  composes: dim-button from global;
+  justify-self: center;
+  margin-top: 4px;
+  @include phone-portrait {
+    padding: 8px 20px;
+  }
+}
+
+.swapButtonContainer {
+  display: grid;
+  min-height: 24px;
+  @include phone-portrait {
+    min-height: 32px;
+  }
+}
+
+.energyHidden {
+  visibility: hidden;
+}

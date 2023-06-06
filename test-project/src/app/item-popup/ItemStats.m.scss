@@ -1,0 +1,18 @@
+@use '../variables.scss' as *;
+
+.stats {
+  display: grid;
+  grid-auto-rows: minmax(12px, auto);
+  grid-template-columns: repeat(2, min-content) 1fr;
+  gap: 4px 0;
+
+  &.hasIcons {
+    grid-template-columns: repeat(3, min-content) 1fr;
+  }
+
+  > * {
+    line-height: 12px;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+}

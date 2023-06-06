@@ -1,0 +1,24 @@
+@use '../variables.scss' as *;
+
+.shadow {
+  height: 1px;
+  box-shadow: 0 1px 4px 0 black;
+  width: 100%;
+  position: sticky;
+  left: 0;
+  top: calc(var(--store-header-height) + var(--header-height) - 1px);
+  z-index: 9;
+}
+
+.cover {
+  @include below-header;
+  height: calc(var(--store-header-height) + 7px);
+  width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 9;
+  background: $gradient;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
+}

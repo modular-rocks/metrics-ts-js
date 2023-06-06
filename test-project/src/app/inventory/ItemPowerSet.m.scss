@@ -1,0 +1,40 @@
+@use '../variables.scss' as *;
+
+.itemPowerSet {
+  display: grid;
+  margin: auto;
+  width: fit-content;
+  grid-template-columns: max-content max-content max-content max-content;
+  gap: 1px 6px;
+  align-items: center;
+
+  img {
+    height: 20px;
+    width: 20px;
+    &.invert {
+      filter: invert(1);
+    }
+  }
+
+  .bucketName {
+    text-align: right;
+    opacity: 0.6;
+  }
+  .powerDiff {
+    text-align: center;
+    font-weight: bold;
+
+    &.positive {
+      color: $green;
+    }
+    &.negative {
+      color: $red;
+    }
+  }
+  .spanGrid {
+    grid-column-end: span 4;
+    hr {
+      margin: 3px;
+    }
+  }
+}

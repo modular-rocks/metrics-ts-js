@@ -1,0 +1,24 @@
+@use '../variables.scss' as *;
+
+.badge {
+  border-radius: 50%;
+  border-radius: 10px;
+  background: $orange;
+  padding: 0 4px;
+  color: black;
+  font-size: 9px;
+  transition: all 150ms ease-out;
+}
+
+.button {
+  composes: dim-button from global;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  &:hover .badge {
+    background-color: black;
+    color: $orange;
+  }
+}

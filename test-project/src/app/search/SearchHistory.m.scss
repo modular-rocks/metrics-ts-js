@@ -1,0 +1,44 @@
+.searchHistory {
+  list-style: none;
+  table {
+    border-spacing: 0;
+    width: 100%;
+  }
+
+  th {
+    text-align: left;
+    border-bottom: 1px solid white;
+    white-space: nowrap;
+  }
+
+  td,
+  th {
+    vertical-align: top;
+    padding: 16px 8px;
+  }
+
+  tr:nth-child(2n) {
+    td {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.iconButton {
+  composes: resetButton from '../dim-ui/common.m.scss';
+  margin-left: 6px;
+  color: white;
+  padding: 0 2px;
+}
+
+.date {
+  white-space: nowrap;
+}
+
+.instructions {
+  margin: 1em;
+
+  button {
+    float: right;
+  }
+}

@@ -1,0 +1,59 @@
+@use '../variables.scss' as *;
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 32px;
+  // pull & lock buttons
+  > div:nth-child(1),
+  > div:nth-child(2) {
+    padding: 4px;
+  }
+  // Tag selector
+  > div > div > button {
+    padding: 3px !important;
+  }
+}
+
+.initialItem {
+  color: $orange;
+  font-weight: bold;
+}
+
+.itemName {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  :global(.app-icon) {
+    font-size: 8px;
+    margin-right: 2px;
+    vertical-align: initial;
+  }
+  &.isFindable {
+    cursor: pointer;
+  }
+}
+
+.itemAside {
+  position: absolute;
+  padding: 0;
+  right: 4px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.close {
+  width: 32px;
+  height: 32px;
+  background-size: 16px;
+  background-image: url('images/close.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  &:hover {
+    background-color: $orange;
+  }
+}

@@ -1,0 +1,39 @@
+@use '../variables.scss' as *;
+
+.page {
+  composes: dim-page from global;
+
+  padding: 16px 1em;
+  font-size: 14px;
+  user-select: auto;
+
+  form {
+    padding: 0;
+  }
+  h1 {
+    flex-shrink: 0;
+    margin: 0;
+    font-weight: 200;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+      margin-right: 8px;
+    }
+
+    @media (max-width: 800px) {
+      font-size: 20px;
+    }
+  }
+  h2 {
+    a {
+      color: $orange;
+      text-decoration: none;
+      border-bottom: 1px solid scale-color($orange, $alpha: -50%);
+    }
+  }
+  > p {
+    margin: 5px 0;
+  }
+}

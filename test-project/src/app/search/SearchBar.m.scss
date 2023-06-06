@@ -1,0 +1,183 @@
+@use '../variables.scss' as *;
+
+.searchBar {
+  position: relative;
+}
+
+.open {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.menu {
+  color: white;
+  overflow: hidden;
+  margin: 0;
+  border-top: 0;
+  background: #161616;
+  position: absolute;
+  z-index: 50;
+  list-style: none;
+  padding: 0;
+  left: 0;
+  right: 0;
+  top: 32px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+
+  @include phone-portrait {
+    top: calc(100% + 1px);
+    overflow-y: auto;
+    overscroll-behavior: none;
+    max-height: calc(var(--viewport-height) - var(--header-height));
+  }
+}
+
+.invalid {
+  color: #aaa !important;
+}
+
+.openButton {
+  composes: resetButton from '../dim-ui/common.m.scss';
+  display: inline-block;
+  margin-left: 5px;
+  color: #999;
+  font-size: 12px !important;
+}
+
+.menuItem {
+  composes: flexRow from '../dim-ui/common.m.scss';
+  align-items: flex-start;
+  padding: 6px 9px 6px 9px;
+  gap: 6px;
+
+  @include phone-portrait {
+    align-items: center;
+    padding: 14px 14px 14px 9px;
+  }
+}
+
+.menuItemIcon {
+  font-size: 12px !important;
+  margin-top: 4px;
+  color: #999;
+}
+
+.deleteIcon {
+  composes: resetButton from '../dim-ui/common.m.scss';
+  font-size: 10px !important;
+  margin-top: 4px;
+  color: #999;
+  padding: 0 2px;
+  visibility: hidden;
+  @media (hover: none) {
+    visibility: visible;
+  }
+}
+
+.namedQueryBody {
+  display: block;
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  opacity: 0.5;
+}
+
+.highlightedItem {
+  background-color: $orange;
+  color: black !important;
+  .menuItemIcon {
+    color: black;
+  }
+  .deleteIcon {
+    color: #333;
+    visibility: visible;
+  }
+  .namedQueryBody {
+    opacity: 1;
+  }
+}
+
+.menuItemQuery {
+  white-space: normal;
+  margin: 0 auto 0 0;
+  padding: 1px 0;
+  overflow: hidden;
+  max-height: 4em;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* Highlighted spans of text in the autocompleter */
+.textHighlight {
+  display: inline-block;
+  white-space: pre;
+  border-bottom: 1px dotted #ddd;
+  margin-bottom: -1px;
+  .highlightedItem & {
+    border-bottom-color: #222;
+  }
+}
+
+.keyHelp {
+  margin-top: 2px;
+  .highlightedItem & {
+    color: #222;
+    border-color: #222;
+  }
+}
+
+.saveSearchButton > :global(.app-icon) {
+  color: $orange !important;
+}
+
+.filterHelp {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.filterBarButton {
+  margin: 0 6px;
+  padding: 0;
+  appearance: none;
+  display: inline-block;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+
+  :focus {
+    outline: 1px solid $orange;
+  }
+
+  @include phone-portrait {
+    margin-right: 8px !important;
+  }
+
+  :global(.mobile-search-link) & {
+    top: 0;
+  }
+
+  :global(.app-icon) {
+    font-size: 14px !important;
+    color: #999 !important;
+    // Increase touch target size
+    padding: 4px;
+    margin: -4px;
+    margin-left: 4px;
+    &:first-child {
+      margin-left: -4px;
+    }
+    &:hover {
+      color: #e8a534 !important;
+    }
+    :global(.mobile-search-link) & {
+      font-size: 18px !important;
+    }
+  }
+
+  span,
+  a {
+    margin: 0 !important;
+  }
+}

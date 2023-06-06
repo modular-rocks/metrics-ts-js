@@ -1,0 +1,23 @@
+@use '../variables.scss' as *;
+
+.keyHelp {
+  border-radius: 2px;
+  display: inline-block;
+  padding: 0 4px;
+  margin-left: 4px;
+  font-size: 10px;
+  color: #ddd;
+  border: 1px solid #ddd;
+  white-space: nowrap;
+  text-align: center;
+
+  @include phone-portrait {
+    display: none;
+    margin: 0;
+  }
+
+  :global(.highlighted) & {
+    color: #222;
+    border-color: #222;
+  }
+}

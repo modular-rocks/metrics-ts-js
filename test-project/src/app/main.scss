@@ -1,0 +1,363 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// DIM Main stylesheet
+//
+// The main stylesheet for all of the styles!
+//
+// Prefer CSS modules, or at least stylesheets that are imported directly by the components that need them, to putting things here.
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@import 'variables.scss';
+
+@font-face {
+  font-family: 'Destiny Symbols';
+  src: url('../data/d2/DestinySymbols.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+
+:root {
+  // Item width including border
+  --item-size: 50px;
+  // Margin on the bottom and right of an item
+  --item-margin: 6px;
+  // Padding at the ends of inventory column
+  --inventory-column-padding: 12px;
+  // ultimately user-determined. default values here
+  --num-characters: 3;
+  --tiles-per-char-column: 3;
+  // equipped item plus character's inventory
+  --character-column-width: calc(
+    (var(--tiles-per-char-column) + 1) * (var(--item-size) + var(--item-margin))
+  );
+  // used for phone portrait mode
+  --column-padding: calc(2 * var(--inventory-column-padding) - var(--item-margin));
+  // The height of the visible viewport, taking into account virtual keyboards on iOS. Set by JS. This is more accurate than 100vh!
+  --viewport-height: 100vh;
+  // The bottom offset of the visual viewport from the layout viewport. Set by JS. This can help attach things to virtual keyboards.
+  --viewport-bottom-offset: 0;
+  // The height of the header including padding that may be added on rounded-corner phones. Set by JS.
+  --header-height: 44px;
+  // The height of the inventory store header section. Set by JS.
+  --store-header-height: 62px;
+
+  // How many desktop mode sidebar trays are open
+  --expanded-sidebars: 0;
+  --sidebar-size: 260px;
+
+  // prevents content shift with persistent scroll-y bar
+  overflow-y: scroll;
+}
+
+@media (max-width: 1025px) {
+  :root {
+    --item-size: 48px;
+  }
+}
+
+@include phone-portrait {
+  :root {
+    --item-margin: 10px;
+    // Padding at the ends of inventory column
+    --inventory-column-padding: 12px;
+    /* prettier-ignore */
+    --item-size: calc(
+      (
+          100vw -
+          var(--column-padding) -
+          #{$equipped-item-total-outset} -
+          var(--combined-item-margins)
+        ) / (var(--tiles-per-char-column) + 1)
+    ) !important;
+    --column-padding: calc(2 * var(--inventory-column-padding) - var(--item-margin));
+    --combined-item-margins: calc(var(--item-margin) * (var(--tiles-per-char-column) + 1));
+    // sets scroll bar back to auto as the content shift an issue at this size.
+    overflow-y: auto;
+  }
+
+  .char-cols-3 {
+    --item-margin: 15px;
+    // Padding at the ends of inventory column
+    --inventory-column-padding: 34px;
+    // this is duplicated for .char-cols-3 to recalculate using local var adjustments
+    /* prettier-ignore */
+    --item-size: calc(
+      (
+        100vw -
+        var(--column-padding) -
+        #{$equipped-item-total-outset} -
+        var(--combined-item-margins)
+      ) / (var(--tiles-per-char-column) + 1)
+    ) !important;
+    --column-padding: calc(2 * var(--inventory-column-padding) - var(--item-margin));
+    --combined-item-margins: calc(var(--item-margin) * (var(--tiles-per-char-column) + 1));
+  }
+}
+
+// Suppress outline on focusable divs
+div[tabindex='-1']:focus {
+  outline: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: normal;
+}
+
+label {
+  cursor: inherit;
+}
+
+div:focus,
+span:focus {
+  outline-width: 0;
+}
+
+@keyframes browser-warning {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+// Styles for the warning saying DIM isn't compatible with your browser. Once this CSS loads the warning will fade out after some time.
+#browser-warning {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #900;
+  padding: 8px;
+  text-align: center;
+  &.hidden {
+    display: none;
+  }
+  animation: 1s linear 10s forwards browser-warning;
+}
+
+/**
+  Misc DIM page
+ **/
+.dim-page {
+  // non-inventory page settings
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+// Use this to make images not tappable (Android Chrome will show a download menu)
+.no-pointer-events,
+.app-icon {
+  pointer-events: none;
+}
+
+a {
+  color: #ddd;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+h2,
+h3 {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+html,
+body {
+  // Disable pull to refresh in Android
+  overscroll-behavior: none;
+  @include phone-portrait {
+    user-select: none;
+  }
+}
+
+body {
+  margin: 0 auto;
+  background-color: #313233;
+  color: white;
+  font-family: 'Open Sans', sans-serif, 'Destiny Symbols';
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  accent-color: $orange;
+  // Disable drag and drop so we can use our polyfill
+  -webkit-user-drag: none;
+  // Don't let iOS Safari mess with font sizes
+  text-size-adjust: none;
+}
+
+h2,
+h3,
+h4 {
+  font-weight: 400;
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
+*[role='button'] {
+  cursor: pointer;
+}
+
+/* Forms */
+
+input,
+select,
+option {
+  font-family: 'Open Sans', sans-serif, 'Destiny Symbols';
+}
+
+input[type='search'] {
+  appearance: textfield;
+}
+
+textarea {
+  width: 100%;
+  height: 30px;
+  background-color: #333;
+  padding: 4px 8px;
+  border: none;
+  outline: none;
+  color: white;
+  box-sizing: border-box;
+  font-family: monospace, 'Destiny Symbols';
+  font-size: inherit;
+  // Setting this makes yuku/textcomplete faster because it doesn't need to make a fake element to measure line height (incorrectly, too)
+  line-height: calc(16 / 12);
+}
+
+select {
+  appearance: none;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="white" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg>')
+    no-repeat;
+  background-size: 10px;
+  background-position: calc(100% - 10px) center;
+  background-repeat: no-repeat;
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 2px 28px 2px 10px;
+  height: 27px;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  border: 1px solid transparent;
+
+  @include phone-portrait {
+    font-size: 14px;
+    line-height: calc(18 / 14);
+    padding: 6px 32px 6px 16px;
+    height: 35px;
+  }
+
+  &:hover,
+  &:active {
+    background-color: $orange;
+    color: black;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="black" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg>');
+  }
+  // Set focus styles
+  &:focus {
+    border-color: $orange;
+    outline: none;
+  }
+  // For browsers that support :focus-visible, remove focus styles when focus-visible would be unset
+  &:focus:not(:focus-visible) {
+    border-color: transparent;
+  }
+
+  option {
+    background: black;
+    color: white;
+  }
+}
+
+/* Button */
+
+.dim-button {
+  cursor: pointer;
+  padding: 4px 10px;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  font-family: 'Open Sans', sans-serif, 'Destiny Symbols';
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  border: 1px solid transparent;
+  transition: all 150ms ease-out;
+  box-sizing: border-box;
+  text-align: center;
+
+  @include phone-portrait {
+    font-size: 14px;
+    line-height: calc(18 / 14);
+    padding: 8px 16px;
+  }
+  img {
+    height: 1.3em;
+    width: auto;
+    vertical-align: bottom;
+    margin: 0 0.3em;
+    filter: drop-shadow(0 0 1px black);
+    transition: filter 150ms ease-out;
+  }
+
+  &:hover,
+  &:active,
+  &.selected {
+    background-color: $orange !important;
+    color: black !important;
+    img {
+      filter: invert(1) drop-shadow(0 0 1px black);
+    }
+  }
+  input {
+    display: none;
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    &:hover,
+    &:active,
+    &.selected {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+      color: white !important;
+      img {
+        filter: drop-shadow(0 0 1px black);
+      }
+    }
+  }
+  &.danger {
+    &:hover {
+      background-color: $red !important;
+    }
+  }
+  // Set focus styles
+  &:focus {
+    border-color: $orange;
+    outline: none;
+  }
+  // For browsers that support :focus-visible, remove focus styles when focus-visible would be unset
+  &:focus:not(:focus-visible) {
+    border-color: transparent;
+  }
+
+  & .app-icon {
+    margin-right: 4px;
+    &:only-child {
+      margin-right: unset;
+    }
+  }
+}
+
+a.dim-button {
+  text-decoration: none;
+}
+
+.horizontal-swipable {
+  touch-action: pan-y;
+}

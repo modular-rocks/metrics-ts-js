@@ -1,0 +1,56 @@
+@use '../variables.scss' as *;
+
+.select {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tile {
+  height: 46px;
+
+  @include phone-portrait {
+    min-width: 260px;
+
+    > div {
+      margin: 0 5px;
+    }
+  }
+}
+
+.vertical {
+  composes: select;
+  flex-direction: column;
+  align-items: center;
+
+  .tile {
+    width: 100%;
+    margin-bottom: 8px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .unselected > div > div {
+    opacity: 0.4;
+  }
+}
+
+.frame {
+  max-width: 250px;
+  @include phone-portrait {
+    max-width: 260px;
+  }
+  margin: 8px auto;
+  overflow: visible !important;
+  position: relative;
+}
+
+.track {
+  display: block;
+  // Don't let the browser handle touches, we'll do it ourselves
+  touch-action: none;
+
+  > * {
+    display: inline-block;
+    vertical-align: top;
+  }
+}

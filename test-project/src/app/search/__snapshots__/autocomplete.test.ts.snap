@@ -1,0 +1,1091 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`autocompleteTermSuggestions autocomplete within multi-word query for {"rare curio" arctic haz} with exact match 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        13,
+        31,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": ""rare curio" name:"arctic haze"",
+      "fullText": ""rare curio" name:"arctic haze"",
+      "helpText": undefined,
+    },
+    "type": 3,
+  },
+]
+`;
+
+exports[`autocompleteTermSuggestions autocomplete within multi-word query for {"rare curio" or arctic haz} with exact match 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        16,
+        34,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": ""rare curio" or name:"arctic haze"",
+      "fullText": ""rare curio" or name:"arctic haze"",
+      "helpText": undefined,
+    },
+    "type": 3,
+  },
+]
+`;
+
+exports[`autocompleteTermSuggestions autocomplete within multi-word query for {(is:a or is:b) and (is:c or multi w|)} with exact match 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        28,
+        45,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": "(is:a or is:b) and (is:c or name:"multi word")",
+      "fullText": "(is:a or is:b) and (is:c or name:"multi word")",
+      "helpText": undefined,
+    },
+    "type": 3,
+  },
+]
+`;
+
+exports[`autocompleteTermSuggestions autocomplete within multi-word query for {acd/0 fee} with exact match 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        0,
+        27,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": "name:"acd/0 feedback fence"",
+      "fullText": "name:"acd/0 feedback fence"",
+      "helpText": undefined,
+    },
+    "type": 3,
+  },
+]
+`;
+
+exports[`autocompleteTermSuggestions autocomplete within multi-word query for {ager's sce} with exact match 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        0,
+        21,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": "name:"ager's scepter"",
+      "fullText": "name:"ager's scepter"",
+      "helpText": undefined,
+    },
+    "type": 3,
+  },
+]
+`;
+
+exports[`autocompleteTermSuggestions autocomplete within multi-word query for {arctic  haz} with exact match 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        0,
+        18,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": "name:"arctic haze"",
+      "fullText": "name:"arctic haze"",
+      "helpText": undefined,
+    },
+    "type": 3,
+  },
+]
+`;
+
+exports[`autocompleteTermSuggestions autocomplete within multi-word query for {arctic haz} with exact match 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        0,
+        18,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": "name:"arctic haze"",
+      "fullText": "name:"arctic haze"",
+      "helpText": undefined,
+    },
+    "type": 3,
+  },
+]
+`;
+
+exports[`autocompleteTermSuggestions autocomplete within multi-word query for {is:weapon arctic haz| -is:exotic} with exact match 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        10,
+        28,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": "is:weapon name:"arctic haze" -is:exotic",
+      "fullText": "is:weapon name:"arctic haze" -is:exotic",
+      "helpText": undefined,
+    },
+    "type": 3,
+  },
+]
+`;
+
+exports[`autocompleteTermSuggestions autocomplete within multi-word query for {name:"foo" arctic haz} with exact match 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        11,
+        29,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": "name:"foo" name:"arctic haze"",
+      "fullText": "name:"foo" name:"arctic haze"",
+      "helpText": undefined,
+    },
+    "type": 3,
+  },
+]
+`;
+
+exports[`autocompleteTermSuggestions autocomplete within multi-word query for {rare curio or arctic haz} with exact match 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        21,
+        39,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": "rare curio or arctic name:"arctic haze"",
+      "fullText": "rare curio or arctic name:"arctic haze"",
+      "helpText": undefined,
+    },
+    "type": 3,
+  },
+]
+`;
+
+exports[`autocompleteTermSuggestions autocomplete within multi-word query for {stat:rpm:200 first in, last} with exact match 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        13,
+        38,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": "stat:rpm:200 name:"first in, last out"",
+      "fullText": "stat:rpm:200 name:"first in, last out"",
+      "helpText": undefined,
+    },
+    "type": 3,
+  },
+]
+`;
+
+exports[`autocompleteTermSuggestions autocomplete within multi-word query for {the last word} with exact match 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        0,
+        20,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": "name:"the last word"",
+      "fullText": "name:"the last word"",
+      "helpText": undefined,
+    },
+    "type": 3,
+  },
+]
+`;
+
+exports[`autocompleteTermSuggestions autocomplete within multi-word query for {toil and trou} with exact match 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        9,
+        32,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": "toil and name:"toil and trouble"",
+      "fullText": "toil and name:"toil and trouble"",
+      "helpText": undefined,
+    },
+    "type": 3,
+  },
+]
+`;
+
+exports[`autocompleteTermSuggestions autocomplete within multi-word query for {two-tail} with exact match 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        0,
+        21,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": "name:"two-tailed fox"",
+      "fullText": "name:"two-tailed fox"",
+      "helpText": undefined,
+    },
+    "type": 3,
+  },
+]
+`;
+
+exports[`autocompleteTermSuggestions autocomplete within query for {(is:blue ju|n)} 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        9,
+        17,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": "(is:blue tag:junk)",
+      "fullText": "(is:blue tag:junk)",
+      "helpText": undefined,
+    },
+    "type": 3,
+  },
+]
+`;
+
+exports[`autocompleteTermSuggestions autocomplete within query for {is:bow is:v|oid} 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        7,
+        14,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": "is:bow is:void",
+      "fullText": "is:bow is:void",
+      "helpText": undefined,
+    },
+    "type": 3,
+  },
+]
+`;
+
+exports[`autocompleteTermSuggestions autocomplete within query for {is:haspower is:b} 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        12,
+        18,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": "is:haspower is:bow",
+      "fullText": "is:haspower is:bow",
+      "helpText": undefined,
+    },
+    "type": 3,
+  },
+  {
+    "highlightRange": {
+      "range": [
+        12,
+        19,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": "is:haspower is:blue",
+      "fullText": "is:haspower is:blue",
+      "helpText": undefined,
+    },
+    "type": 3,
+  },
+]
+`;
+
+exports[`autocompleteTermSuggestions autocomplete within query for {not(} 1`] = `[]`;
+
+exports[`autocompleteTermSuggestions autocomplete within query for {season:>outl} 1`] = `[]`;
+
+exports[`filterComplete autocomplete terms for |is:b| 1`] = `
+[
+  "is:bow",
+  "is:blue",
+]
+`;
+
+exports[`filterComplete autocomplete terms for |jun| 1`] = `
+[
+  "tag:junk",
+]
+`;
+
+exports[`filterComplete autocomplete terms for |ote| 1`] = `
+[
+  "notes:",
+  "is:hasnotes",
+  "is:emotes",
+]
+`;
+
+exports[`filterComplete autocomplete terms for |sni| 1`] = `
+[
+  "is:sniperrifle",
+]
+`;
+
+exports[`filterComplete autocomplete terms for |stat:| 1`] = `
+[
+  "stat:",
+  "stat:rpm:",
+  "stat:rof:",
+  "stat:charge:",
+  "stat:impact:",
+  "stat:handling:",
+  "stat:range:",
+  "stat:stability:",
+  "stat:reload:",
+  "stat:magazine:",
+  "stat:aimassist:",
+  "stat:equipspeed:",
+  "stat:shieldduration:",
+  "stat:velocity:",
+  "stat:blastradius:",
+  "stat:recoildirection:",
+  "stat:drawtime:",
+  "stat:zoom:",
+  "stat:airborne:",
+  "stat:accuracy:",
+  "stat:swingspeed:",
+  "stat:guardefficiency:",
+  "stat:guardresistance:",
+  "stat:chargerate:",
+  "stat:guardendurance:",
+  "stat:ammocapacity:",
+  "stat:mobility:",
+  "stat:resilience:",
+  "stat:recovery:",
+  "stat:discipline:",
+  "stat:intellect:",
+  "stat:strength:",
+  "stat:total:",
+  "stat:custom:",
+  "stat:any:",
+  "stat:highest:",
+  "stat:secondhighest:",
+  "stat:thirdhighest:",
+  "stat:fourthhighest:",
+  "stat:fifthhighest:",
+  "stat:sixthhighest:",
+  "stat:rpm:<",
+  "stat:rpm:>",
+  "stat:rof:<",
+  "stat:rof:>",
+  "stat:charge:<",
+  "stat:charge:>",
+  "stat:impact:<",
+  "stat:impact:>",
+  "stat:handling:<",
+  "stat:handling:>",
+  "stat:range:<",
+  "stat:range:>",
+  "stat:stability:<",
+  "stat:stability:>",
+  "stat:reload:<",
+  "stat:reload:>",
+  "stat:magazine:<",
+  "stat:magazine:>",
+  "stat:aimassist:<",
+  "stat:aimassist:>",
+  "stat:equipspeed:<",
+  "stat:equipspeed:>",
+  "stat:shieldduration:<",
+  "stat:shieldduration:>",
+  "stat:velocity:<",
+  "stat:velocity:>",
+  "stat:blastradius:<",
+  "stat:blastradius:>",
+  "stat:recoildirection:<",
+  "stat:recoildirection:>",
+  "stat:drawtime:<",
+  "stat:drawtime:>",
+  "stat:zoom:<",
+  "stat:zoom:>",
+  "stat:airborne:<",
+  "stat:airborne:>",
+  "stat:accuracy:<",
+  "stat:accuracy:>",
+  "stat:swingspeed:<",
+  "stat:swingspeed:>",
+  "stat:guardefficiency:<",
+  "stat:guardefficiency:>",
+  "stat:guardresistance:<",
+  "stat:guardresistance:>",
+  "stat:chargerate:<",
+  "stat:chargerate:>",
+  "stat:guardendurance:<",
+  "stat:guardendurance:>",
+  "stat:ammocapacity:<",
+  "stat:ammocapacity:>",
+  "stat:mobility:<",
+  "stat:mobility:>",
+  "stat:resilience:<",
+  "stat:resilience:>",
+  "stat:recovery:<",
+  "stat:recovery:>",
+  "stat:discipline:<",
+  "stat:discipline:>",
+  "stat:intellect:<",
+  "stat:intellect:>",
+  "stat:strength:<",
+  "stat:strength:>",
+  "stat:total:<",
+  "stat:total:>",
+  "stat:custom:<",
+  "stat:custom:>",
+  "stat:any:<",
+  "stat:any:>",
+  "stat:highest:<",
+  "stat:highest:>",
+  "stat:secondhighest:<",
+  "stat:secondhighest:>",
+  "stat:thirdhighest:<",
+  "stat:thirdhighest:>",
+  "stat:fourthhighest:<",
+  "stat:fourthhighest:>",
+  "stat:fifthhighest:<",
+  "stat:fifthhighest:>",
+  "stat:sixthhighest:<",
+  "stat:sixthhighest:>",
+  "stat:rpm:<=",
+  "stat:rpm:>=",
+  "stat:rof:<=",
+  "stat:rof:>=",
+  "stat:charge:<=",
+  "stat:charge:>=",
+  "stat:impact:<=",
+  "stat:impact:>=",
+  "stat:handling:<=",
+  "stat:handling:>=",
+  "stat:range:<=",
+  "stat:range:>=",
+  "stat:stability:<=",
+  "stat:stability:>=",
+  "stat:reload:<=",
+  "stat:reload:>=",
+  "stat:magazine:<=",
+  "stat:magazine:>=",
+  "stat:aimassist:<=",
+  "stat:aimassist:>=",
+  "stat:equipspeed:<=",
+  "stat:equipspeed:>=",
+  "stat:shieldduration:<=",
+  "stat:shieldduration:>=",
+  "stat:velocity:<=",
+  "stat:velocity:>=",
+  "stat:blastradius:<=",
+  "stat:blastradius:>=",
+  "stat:recoildirection:<=",
+  "stat:recoildirection:>=",
+  "stat:drawtime:<=",
+  "stat:drawtime:>=",
+  "stat:zoom:<=",
+  "stat:zoom:>=",
+  "stat:airborne:<=",
+  "stat:airborne:>=",
+  "stat:accuracy:<=",
+  "stat:accuracy:>=",
+  "stat:swingspeed:<=",
+  "stat:swingspeed:>=",
+  "stat:guardefficiency:<=",
+  "stat:guardefficiency:>=",
+  "stat:guardresistance:<=",
+  "stat:guardresistance:>=",
+  "stat:chargerate:<=",
+  "stat:chargerate:>=",
+  "stat:guardendurance:<=",
+  "stat:guardendurance:>=",
+  "stat:ammocapacity:<=",
+  "stat:ammocapacity:>=",
+  "stat:mobility:<=",
+  "stat:mobility:>=",
+  "stat:resilience:<=",
+  "stat:resilience:>=",
+  "stat:recovery:<=",
+  "stat:recovery:>=",
+  "stat:discipline:<=",
+  "stat:discipline:>=",
+  "stat:intellect:<=",
+  "stat:intellect:>=",
+  "stat:strength:<=",
+  "stat:strength:>=",
+  "stat:total:<=",
+  "stat:total:>=",
+  "stat:custom:<=",
+  "stat:custom:>=",
+  "stat:any:<=",
+  "stat:any:>=",
+  "stat:highest:<=",
+  "stat:highest:>=",
+  "stat:secondhighest:<=",
+  "stat:secondhighest:>=",
+  "stat:thirdhighest:<=",
+  "stat:thirdhighest:>=",
+  "stat:fourthhighest:<=",
+  "stat:fourthhighest:>=",
+  "stat:fifthhighest:<=",
+  "stat:fifthhighest:>=",
+  "stat:sixthhighest:<=",
+  "stat:sixthhighest:>=",
+]
+`;
+
+exports[`filterComplete autocomplete terms for |stat:mob| 1`] = `
+[
+  "stat:mobility:",
+]
+`;
+
+exports[`filterComplete autocomplete terms for |stat| 1`] = `
+[
+  "stat:",
+  "is:statlower",
+  "basestat:",
+  "maxstatloadout:",
+  "maxstatvalue:",
+  "maxbasestatvalue:",
+  "maxstatloadout:mobility",
+  "maxstatloadout:resilience",
+  "maxstatloadout:recovery",
+  "maxstatloadout:discipline",
+  "maxstatloadout:intellect",
+  "maxstatloadout:strength",
+  "maxstatloadout:total",
+  "maxstatloadout:custom",
+  "maxstatvalue:mobility",
+  "maxstatvalue:resilience",
+  "maxstatvalue:recovery",
+  "maxstatvalue:discipline",
+  "maxstatvalue:intellect",
+  "maxstatvalue:strength",
+  "maxstatvalue:total",
+  "maxstatvalue:custom",
+  "maxstatvalue:any",
+  "maxbasestatvalue:mobility",
+  "maxbasestatvalue:resilience",
+  "maxbasestatvalue:recovery",
+  "maxbasestatvalue:discipline",
+  "maxbasestatvalue:intellect",
+  "maxbasestatvalue:strength",
+  "maxbasestatvalue:total",
+  "maxbasestatvalue:custom",
+  "maxbasestatvalue:any",
+  "is:customstatlower",
+  "stat:rpm:",
+  "stat:rof:",
+  "stat:charge:",
+  "stat:impact:",
+  "stat:handling:",
+  "stat:range:",
+  "stat:stability:",
+  "stat:reload:",
+  "stat:magazine:",
+  "stat:aimassist:",
+  "stat:equipspeed:",
+  "stat:shieldduration:",
+  "stat:velocity:",
+  "stat:blastradius:",
+  "stat:recoildirection:",
+  "stat:drawtime:",
+  "stat:zoom:",
+  "stat:airborne:",
+  "stat:accuracy:",
+  "stat:swingspeed:",
+  "stat:guardefficiency:",
+  "stat:guardresistance:",
+  "stat:chargerate:",
+  "stat:guardendurance:",
+  "stat:ammocapacity:",
+  "stat:mobility:",
+  "stat:resilience:",
+  "stat:recovery:",
+  "stat:discipline:",
+  "stat:intellect:",
+  "stat:strength:",
+  "stat:total:",
+  "stat:custom:",
+  "stat:any:",
+  "stat:highest:",
+  "stat:secondhighest:",
+  "stat:thirdhighest:",
+  "stat:fourthhighest:",
+  "stat:fifthhighest:",
+  "stat:sixthhighest:",
+  "basestat:mobility:",
+  "basestat:resilience:",
+  "basestat:recovery:",
+  "basestat:discipline:",
+  "basestat:intellect:",
+  "basestat:strength:",
+  "basestat:total:",
+  "basestat:custom:",
+  "basestat:any:",
+  "basestat:highest:",
+  "basestat:secondhighest:",
+  "basestat:thirdhighest:",
+  "basestat:fourthhighest:",
+  "basestat:fifthhighest:",
+  "basestat:sixthhighest:",
+]
+`;
+
+exports[`filterSortRecentSearches check saved search highlighting for query || 1`] = `
+[
+  {
+    "query": {
+      "body": "is:patternunlocked -is:crafted",
+      "fullText": "is:patternunlocked -is:crafted",
+      "header": undefined,
+    },
+    "type": 1,
+  },
+  {
+    "query": {
+      "body": "is:patternunlocked -is:crafted",
+      "fullText": "/* random-roll craftable guns */ is:patternunlocked -is:crafted",
+      "header": "random-roll craftable guns",
+    },
+    "type": 1,
+  },
+]
+`;
+
+exports[`filterSortRecentSearches check saved search highlighting for query |craft| 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        23,
+        28,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": "is:patternunlocked -is:crafted",
+      "fullText": "is:patternunlocked -is:crafted",
+      "header": undefined,
+    },
+    "type": 1,
+  },
+  {
+    "highlightRange": {
+      "range": [
+        12,
+        17,
+      ],
+      "section": "header",
+    },
+    "query": {
+      "body": "is:patternunlocked -is:crafted",
+      "fullText": "/* random-roll craftable guns */ is:patternunlocked -is:crafted",
+      "header": "random-roll craftable guns",
+    },
+    "type": 1,
+  },
+]
+`;
+
+exports[`filterSortRecentSearches check saved search highlighting for query |craftable| 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        12,
+        21,
+      ],
+      "section": "header",
+    },
+    "query": {
+      "body": "is:patternunlocked -is:crafted",
+      "fullText": "/* random-roll craftable guns */ is:patternunlocked -is:crafted",
+      "header": "random-roll craftable guns",
+    },
+    "type": 1,
+  },
+]
+`;
+
+exports[`filterSortRecentSearches check saved search highlighting for query |crafted| 1`] = `
+[
+  {
+    "highlightRange": {
+      "range": [
+        23,
+        30,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": "is:patternunlocked -is:crafted",
+      "fullText": "is:patternunlocked -is:crafted",
+      "header": undefined,
+    },
+    "type": 1,
+  },
+  {
+    "highlightRange": {
+      "range": [
+        23,
+        30,
+      ],
+      "section": "body",
+    },
+    "query": {
+      "body": "is:patternunlocked -is:crafted",
+      "fullText": "/* random-roll craftable guns */ is:patternunlocked -is:crafted",
+      "header": "random-roll craftable guns",
+    },
+    "type": 1,
+  },
+]
+`;
+
+exports[`filterSortRecentSearches filter/sort recent searches for query || 1`] = `
+[
+  "recent saved",
+  "yearold saved",
+  "0 days old, 9 uses",
+  "0 days old, 8 uses",
+  "dayold highuse",
+  "0 days old, 7 uses",
+  "1 days old, 9 uses",
+  "1 days old, 8 uses",
+  "0 days old, 6 uses",
+  "1 days old, 7 uses",
+  "2 days old, 9 uses",
+  "2 days old, 8 uses",
+  "1 days old, 6 uses",
+  "2 days old, 7 uses",
+  "3 days old, 9 uses",
+  "0 days old, 5 uses",
+  "3 days old, 8 uses",
+  "2 days old, 6 uses",
+  "3 days old, 7 uses",
+  "4 days old, 9 uses",
+  "1 days old, 5 uses",
+  "4 days old, 8 uses",
+  "3 days old, 6 uses",
+  "4 days old, 7 uses",
+  "5 days old, 9 uses",
+  "2 days old, 5 uses",
+  "5 days old, 8 uses",
+  "4 days old, 6 uses",
+  "0 days old, 4 uses",
+  "5 days old, 7 uses",
+  "6 days old, 9 uses",
+  "3 days old, 5 uses",
+  "6 days old, 8 uses",
+  "5 days old, 6 uses",
+  "1 days old, 4 uses",
+  "6 days old, 7 uses",
+  "7 days old, 9 uses",
+  "4 days old, 5 uses",
+  "7 days old, 8 uses",
+  "6 days old, 6 uses",
+  "2 days old, 4 uses",
+  "7 days old, 7 uses",
+  "8 days old, 9 uses",
+  "5 days old, 5 uses",
+  "8 days old, 8 uses",
+  "7 days old, 6 uses",
+  "3 days old, 4 uses",
+  "8 days old, 7 uses",
+  "9 days old, 9 uses",
+  "6 days old, 5 uses",
+  "9 days old, 8 uses",
+  "8 days old, 6 uses",
+  "4 days old, 4 uses",
+  "9 days old, 7 uses",
+  "10 days old, 9 uses",
+  "0 days old, 3 uses",
+  "7 days old, 5 uses",
+  "10 days old, 8 uses",
+  "9 days old, 6 uses",
+  "5 days old, 4 uses",
+  "10 days old, 7 uses",
+  "11 days old, 9 uses",
+  "1 days old, 3 uses",
+  "8 days old, 5 uses",
+  "11 days old, 8 uses",
+  "10 days old, 6 uses",
+  "6 days old, 4 uses",
+  "11 days old, 7 uses",
+  "12 days old, 9 uses",
+  "2 days old, 3 uses",
+  "9 days old, 5 uses",
+  "12 days old, 8 uses",
+  "11 days old, 6 uses",
+  "7 days old, 4 uses",
+  "12 days old, 7 uses",
+  "13 days old, 9 uses",
+  "3 days old, 3 uses",
+  "10 days old, 5 uses",
+  "13 days old, 8 uses",
+  "12 days old, 6 uses",
+  "8 days old, 4 uses",
+  "13 days old, 7 uses",
+  "14 days old, 9 uses",
+  "4 days old, 3 uses",
+  "11 days old, 5 uses",
+  "14 days old, 8 uses",
+  "13 days old, 6 uses",
+  "9 days old, 4 uses",
+  "14 days old, 7 uses",
+  "15 days old, 9 uses",
+  "5 days old, 3 uses",
+  "12 days old, 5 uses",
+  "15 days old, 8 uses",
+  "14 days old, 6 uses",
+  "10 days old, 4 uses",
+  "15 days old, 7 uses",
+  "16 days old, 9 uses",
+  "6 days old, 3 uses",
+  "13 days old, 5 uses",
+  "16 days old, 8 uses",
+  "15 days old, 6 uses",
+  "11 days old, 4 uses",
+  "16 days old, 7 uses",
+  "17 days old, 9 uses",
+  "7 days old, 3 uses",
+  "14 days old, 5 uses",
+  "17 days old, 8 uses",
+  "0 days old, 2 uses",
+  "16 days old, 6 uses",
+  "12 days old, 4 uses",
+  "17 days old, 7 uses",
+  "18 days old, 9 uses",
+  "8 days old, 3 uses",
+  "15 days old, 5 uses",
+  "18 days old, 8 uses",
+  "1 days old, 2 uses",
+  "17 days old, 6 uses",
+  "13 days old, 4 uses",
+  "18 days old, 7 uses",
+  "19 days old, 9 uses",
+  "9 days old, 3 uses",
+  "16 days old, 5 uses",
+  "19 days old, 8 uses",
+  "2 days old, 2 uses",
+  "18 days old, 6 uses",
+  "14 days old, 4 uses",
+  "19 days old, 7 uses",
+  "20 days old, 9 uses",
+  "10 days old, 3 uses",
+  "17 days old, 5 uses",
+  "20 days old, 8 uses",
+  "3 days old, 2 uses",
+  "19 days old, 6 uses",
+  "15 days old, 4 uses",
+  "20 days old, 7 uses",
+  "21 days old, 9 uses",
+  "11 days old, 3 uses",
+  "18 days old, 5 uses",
+  "21 days old, 8 uses",
+  "4 days old, 2 uses",
+  "20 days old, 6 uses",
+  "16 days old, 4 uses",
+  "21 days old, 7 uses",
+  "22 days old, 9 uses",
+  "12 days old, 3 uses",
+  "19 days old, 5 uses",
+  "22 days old, 8 uses",
+  "5 days old, 2 uses",
+  "21 days old, 6 uses",
+  "17 days old, 4 uses",
+  "22 days old, 7 uses",
+  "23 days old, 9 uses",
+  "13 days old, 3 uses",
+  "20 days old, 5 uses",
+  "23 days old, 8 uses",
+  "6 days old, 2 uses",
+  "22 days old, 6 uses",
+  "18 days old, 4 uses",
+  "23 days old, 7 uses",
+  "24 days old, 9 uses",
+  "14 days old, 3 uses",
+  "21 days old, 5 uses",
+  "24 days old, 8 uses",
+  "7 days old, 2 uses",
+  "23 days old, 6 uses",
+  "19 days old, 4 uses",
+  "24 days old, 7 uses",
+  "25 days old, 9 uses",
+  "15 days old, 3 uses",
+  "22 days old, 5 uses",
+  "25 days old, 8 uses",
+  "8 days old, 2 uses",
+  "24 days old, 6 uses",
+  "20 days old, 4 uses",
+  "25 days old, 7 uses",
+  "26 days old, 9 uses",
+  "16 days old, 3 uses",
+  "23 days old, 5 uses",
+  "26 days old, 8 uses",
+  "9 days old, 2 uses",
+  "25 days old, 6 uses",
+  "21 days old, 4 uses",
+  "26 days old, 7 uses",
+  "27 days old, 9 uses",
+  "17 days old, 3 uses",
+  "24 days old, 5 uses",
+  "27 days old, 8 uses",
+  "10 days old, 2 uses",
+  "26 days old, 6 uses",
+  "22 days old, 4 uses",
+  "27 days old, 7 uses",
+  "28 days old, 9 uses",
+  "18 days old, 3 uses",
+  "25 days old, 5 uses",
+  "28 days old, 8 uses",
+  "11 days old, 2 uses",
+  "27 days old, 6 uses",
+  "23 days old, 4 uses",
+  "28 days old, 7 uses",
+  "29 days old, 9 uses",
+  "19 days old, 3 uses",
+  "26 days old, 5 uses",
+  "29 days old, 8 uses",
+  "12 days old, 2 uses",
+  "28 days old, 6 uses",
+  "24 days old, 4 uses",
+  "29 days old, 7 uses",
+  "20 days old, 3 uses",
+  "27 days old, 5 uses",
+  "13 days old, 2 uses",
+  "29 days old, 6 uses",
+  "25 days old, 4 uses",
+  "21 days old, 3 uses",
+  "28 days old, 5 uses",
+  "14 days old, 2 uses",
+  "26 days old, 4 uses",
+  "22 days old, 3 uses",
+  "29 days old, 5 uses",
+  "15 days old, 2 uses",
+  "27 days old, 4 uses",
+  "0 days old, 1 uses",
+  "23 days old, 3 uses",
+  "16 days old, 2 uses",
+  "28 days old, 4 uses",
+  "1 days old, 1 uses",
+  "24 days old, 3 uses",
+  "17 days old, 2 uses",
+  "29 days old, 4 uses",
+  "2 days old, 1 uses",
+  "25 days old, 3 uses",
+  "18 days old, 2 uses",
+  "3 days old, 1 uses",
+  "26 days old, 3 uses",
+  "19 days old, 2 uses",
+  "4 days old, 1 uses",
+  "27 days old, 3 uses",
+  "20 days old, 2 uses",
+  "5 days old, 1 uses",
+  "28 days old, 3 uses",
+  "21 days old, 2 uses",
+  "6 days old, 1 uses",
+  "29 days old, 3 uses",
+  "22 days old, 2 uses",
+  "7 days old, 1 uses",
+  "23 days old, 2 uses",
+  "8 days old, 1 uses",
+  "24 days old, 2 uses",
+  "9 days old, 1 uses",
+  "25 days old, 2 uses",
+  "10 days old, 1 uses",
+  "26 days old, 2 uses",
+  "11 days old, 1 uses",
+  "27 days old, 2 uses",
+  "12 days old, 1 uses",
+  "28 days old, 2 uses",
+  "13 days old, 1 uses",
+  "29 days old, 2 uses",
+  "14 days old, 1 uses",
+  "15 days old, 1 uses",
+  "16 days old, 1 uses",
+  "17 days old, 1 uses",
+  "18 days old, 1 uses",
+  "19 days old, 1 uses",
+  "20 days old, 1 uses",
+  "21 days old, 1 uses",
+  "22 days old, 1 uses",
+  "23 days old, 1 uses",
+  "24 days old, 1 uses",
+  "25 days old, 1 uses",
+  "26 days old, 1 uses",
+  "27 days old, 1 uses",
+  "28 days old, 1 uses",
+  "29 days old, 1 uses",
+  "yearold highuse",
+  "yearold unsaved",
+  "dim api autosuggest",
+]
+`;
+
+exports[`filterSortRecentSearches filter/sort recent searches for query |high| 1`] = `
+[
+  "dayold highuse",
+  "yearold highuse",
+]
+`;

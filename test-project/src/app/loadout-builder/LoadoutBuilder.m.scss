@@ -1,0 +1,89 @@
+@use '../variables.scss' as *;
+
+.page {
+  :global .perk-image {
+    &.locked-perk {
+      border-color: $orange;
+    }
+  }
+}
+
+.menuContent {
+  box-sizing: border-box;
+  @include phone-portrait {
+    padding: 0 10px;
+  }
+}
+
+.processing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  font-size: 1.2em;
+  padding: 10px 10px;
+  position: fixed;
+  left: 50%;
+  @include below-header;
+
+  white-space: nowrap;
+  z-index: 10;
+
+  > div {
+    margin-right: 8px;
+  }
+
+  > span {
+    font-size: 1.4em;
+  }
+
+  @include phone-portrait {
+    left: 0;
+    width: 100%;
+  }
+}
+
+.toolbar {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  box-sizing: border-box;
+  @include phone-portrait {
+    padding: 0 10px;
+  }
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.guide {
+  box-sizing: border-box;
+  @include phone-portrait {
+    padding: 0 10px;
+  }
+  user-select: text;
+  p,
+  li {
+    font-size: 14px;
+  }
+  ol {
+    padding-left: 1.25em;
+  }
+}
+
+.undoRedo {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+
+  > * {
+    flex: 1;
+  }
+  gap: 4px;
+}
+
+.speedReport {
+  font-size: 11px;
+  user-select: text;
+  display: inline;
+  margin-left: 1em;
+}

@@ -1,0 +1,33 @@
+@use '../variables.scss' as *;
+
+.page {
+  margin-top: 10px;
+}
+
+.menu {
+  :global(.dim-button),
+  select {
+    width: 100%;
+  }
+}
+
+.menuButtons {
+  display: flex;
+  flex-direction: column;
+  margin: 8px 0;
+  gap: 8px;
+  @include phone-portrait {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.menuButton {
+  composes: dim-button from global;
+  text-align: left;
+}
+
+.hashtagTip {
+  display: flex;
+  align-items: center;
+}

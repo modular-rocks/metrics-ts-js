@@ -1,0 +1,122 @@
+@use '../variables.scss' as *;
+
+.selectedPlug {
+  composes: flexRow from '../dim-ui/common.m.scss';
+  min-height: calc(var(--item-size) + 20px);
+  display: grid;
+  grid-template-columns: var(--item-size) 1fr;
+  grid-template-areas:
+    'mod desc button'
+    'mod clarityDesc button'
+    'mod source button';
+  &.hasStats {
+    grid-template-columns: var(--item-size) 1fr 1fr;
+    grid-template-areas:
+      'mod desc stat button'
+      'mod modstat stat button'
+      'mod clarityDesc stat button'
+      'mod source stat button';
+  }
+
+  gap: 0 8px;
+  @include phone-portrait {
+    grid-template-columns: var(--item-size) 1fr;
+    grid-template-areas:
+      'mod desc'
+      'mod clarityDesc'
+      'mod source'
+      'mod button';
+    &.hasStats {
+      grid-template-columns: var(--item-size) 1fr;
+      grid-template-areas:
+        'mod desc'
+        'mod modstat'
+        'mod stat'
+        'mod clarityDesc'
+        'mod source'
+        'mod button';
+    }
+    gap: 8px 8px;
+  }
+}
+
+.modIcon {
+  composes: flexColumn from '../dim-ui/common.m.scss';
+  align-items: center;
+  grid-area: mod;
+}
+
+.modDescription {
+  composes: flexColumn from '../dim-ui/common.m.scss';
+  grid-area: desc;
+  h3 {
+    font-weight: bold;
+    margin: 0;
+  }
+}
+.modRequirement {
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.modClarityDescription {
+  grid-area: clarityDesc;
+  margin-top: 2px;
+  border-left: 2px solid $communityBlue;
+  padding-left: 6px;
+}
+
+.modStats {
+  grid-area: modstat;
+}
+
+.itemStats {
+  grid-area: stat;
+  margin: 0;
+  height: min-content;
+}
+
+.source {
+  grid-area: source;
+  margin-top: 2px;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.material {
+  composes: flexRow from '../dim-ui/common.m.scss';
+  align-items: center;
+  margin-top: 4px;
+  font-size: 10px;
+  img {
+    height: 16px;
+    width: 16px;
+    margin-right: 0;
+  }
+}
+
+.insertButton {
+  composes: dim-button from global;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  grid-area: button;
+  align-self: center;
+  transition: none;
+
+  gap: 8px;
+
+  > span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include phone-portrait {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+.insertLabel {
+  width: 100%;
+}

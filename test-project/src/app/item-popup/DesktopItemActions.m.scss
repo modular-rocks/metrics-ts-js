@@ -1,0 +1,35 @@
+@use '../variables.scss' as *;
+
+.interaction {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: black;
+}
+
+.collapseButton {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+
+  :global(.app-icon) {
+    margin: 7px 10px 0;
+    display: block;
+    width: 16px;
+    font-size: 16px;
+  }
+
+  &:hover :global(.app-icon) {
+    color: $orange;
+  }
+
+  .collapsed & {
+    padding: 5px 0 15px;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  [data-popper-placement^='left'] & {
+    transform: scaleX(-1);
+  }
+}

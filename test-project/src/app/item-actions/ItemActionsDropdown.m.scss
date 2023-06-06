@@ -1,0 +1,8 @@
+.storeIcon {
+  margin-right: 4px;
+}
+
+.dropdownButton {
+  composes: filterBarButton from '../search/SearchBar.m.scss';
+  margin: 0;
+}

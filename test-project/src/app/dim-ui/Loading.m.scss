@@ -1,0 +1,138 @@
+@use '../variables.scss' as *;
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 100;
+  pointer-events: none;
+}
+
+$square-size: 40px;
+$initialDelay: 1s;
+$sequenceDelay: 0.1s;
+$logoDuration: 4s;
+$logoDelay: 1s;
+
+$image: (
+  (0, 0),
+  (0, 1),
+  (0, 2),
+  (0, 3),
+  (0, 4),
+  (1, 4),
+  (2, 4),
+  (3, 4),
+  (4, 4),
+  (4, 3),
+  (4, 2),
+  (4, 1),
+  (4, 0),
+  (3, 0),
+  (2, 0),
+  (2, 2)
+);
+
+.container {
+  width: 5 * $square-size;
+  height: 5 * $square-size;
+  position: relative;
+  transform: rotate(45deg);
+  margin: 60px 0;
+}
+
+.square {
+  width: $square-size;
+  height: $square-size;
+  background: #fff;
+  position: absolute;
+  transform: scale(0) rotate(0);
+}
+
+@for $index from 1 through length($image) {
+  $point: nth($image, $index);
+  .square:nth-child(#{$index}) {
+    top: nth($point, 1) * $square-size;
+    left: nth($point, 2) * $square-size;
+    animation: $logoDuration
+      ease
+      ($initialDelay + $sequenceDelay * ($index - 1))
+      infinite
+      forwards
+      logo-animation-pop;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes logo-animation-pop {
+  0% {
+    transform: scale(0) rotate(-45deg);
+  }
+  10% {
+    transform: scale(1.2) rotate(0);
+  }
+  15% {
+    transform: scale(1.1) rotate(0);
+  }
+  55% {
+    transform: scale(1) rotate(0);
+  }
+  65% {
+    transform: scale(0) rotate(-45deg);
+  }
+  100% {
+    transform: scale(0) rotate(-45deg);
+  }
+}
+
+$loadingTextDuration: 200ms;
+$loadingTextDistance: 16px;
+.textContainer {
+  width: 300px;
+  height: 3em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  opacity: 0;
+  animation: 500ms linear $initialDelay forwards fade-in;
+}
+.text {
+  position: absolute;
+  font-size: 16px;
+  text-align: center;
+}
+.textEnter {
+  transform: translateY(-$loadingTextDistance);
+  opacity: 0;
+}
+.textEnter.textEnterActive {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all $loadingTextDuration ease-out;
+}
+.textExit {
+  transform: translateY(0);
+  opacity: 1;
+}
+.textExit.textExitActive {
+  transform: translateY($loadingTextDistance);
+  opacity: 0;
+  transition: all $loadingTextDuration ease-out;
+}

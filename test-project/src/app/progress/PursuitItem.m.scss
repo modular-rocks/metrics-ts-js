@@ -1,0 +1,109 @@
+@use '../variables.scss' as *;
+
+.pursuit {
+  position: relative;
+  width: var(--item-size);
+  height: var(--item-size);
+  transition: opacity 0.2s, transform 0.2s;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  :global(#milestones) &,
+  :global(#seasonal-challenges) & {
+    height: calc(var(--item-size) * 10 / 9 + 4px);
+  }
+}
+.pursuit.flawedPassage::before {
+  content: '';
+  background: rgba(255, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.image {
+  width: var(--item-size);
+  height: var(--item-size);
+  box-sizing: border-box;
+  border: 1px solid #666;
+  background-color: #181818;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  .tracked & {
+    border-color: #bdfc7f;
+    border-width: 2px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  :global(#milestones) &,
+  :global(#event) &,
+  :global(#seasonal-challenges) & {
+    border: 0;
+    background-color: transparent;
+  }
+}
+
+.amount {
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  background-color: #ddd;
+  color: black;
+  height: calc(#{$badge-height});
+  font-size: calc(#{$badge-font-size});
+  text-align: right;
+  box-sizing: border-box;
+  padding: 0 2px;
+}
+
+.fullstack {
+  font-weight: bold;
+  color: #f2721b;
+}
+
+.expired {
+  position: absolute;
+  display: block;
+  width: calc((var(--item-size) + 1px) / 2) !important;
+  height: calc((var(--item-size) + 1px) / 2) !important;
+  top: 0;
+  left: 0;
+}
+
+.complete {
+  position: absolute;
+  display: block;
+  width: calc((var(--item-size) + 1px) / 2) !important;
+  height: calc((var(--item-size) + 1px) / 2) !important;
+  right: 0;
+  bottom: 0;
+}
+
+.trackedIcon {
+  position: absolute;
+  display: block;
+  width: calc(var(--item-size) / 3.1) !important;
+  height: auto !important;
+  right: calc(var(--item-size) / 13);
+  top: 0;
+}
+
+.progress {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: auto;
+  left: 2px;
+  right: 2px;
+  opacity: 1;
+  bottom: 2px;
+  height: calc(var(--item-size) / 9);
+}
+
+.progressAmount {
+  height: 100%;
+  background-color: $xp;
+}

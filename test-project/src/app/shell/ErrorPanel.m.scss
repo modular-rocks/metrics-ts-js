@@ -1,0 +1,61 @@
+@use '../variables.scss' as *;
+
+.errorPanel {
+  margin: 16px 0;
+  padding: 0.85em;
+  background: scale-color($red, $lightness: -90%);
+  border-top: 4px solid $red;
+
+  h2 {
+    margin: 0 0 8px 0 !important;
+    letter-spacing: normal !important;
+    text-transform: none !important;
+  }
+  :global(.dim-button) {
+    color: white;
+    font-size: 12px;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+
+.twitterLinks {
+  composes: flexRow from '../dim-ui/common.m.scss';
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.errorCode {
+  color: #888;
+  margin: 0 0 0 8px;
+  font-size: 12px;
+  float: right;
+}
+
+.twitters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 16px;
+
+  @include phone-portrait {
+    flex-direction: column;
+  }
+}
+
+.timeline {
+  box-sizing: border-box;
+  flex: 1;
+  position: relative;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+
+  [twdiv='yes'] {
+    overflow: auto;
+    height: 400px;
+    background-color: black;
+    @include phone-portrait {
+      height: 300px;
+    }
+  }
+}

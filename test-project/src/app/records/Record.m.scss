@@ -1,0 +1,260 @@
+@use '../variables.scss' as *;
+
+.triumphRecord {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #666;
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  box-sizing: border-box;
+
+  @include phone-portrait {
+    width: 100%;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  p {
+    margin: 0 0 8px 0;
+    color: #a1a2a2;
+    white-space: pre-wrap;
+  }
+
+  p.gildingText {
+    margin: 8px 0 0 0;
+    color: white;
+  }
+
+  p + p.gildingText {
+    margin: 0;
+  }
+}
+
+.obscured h3 {
+  color: #a1a2a2;
+}
+
+.unlocked {
+  border-color: #56ecff;
+}
+
+.tracked {
+  position: relative;
+  border-color: #bdfc7f;
+  outline: 1px solid #bdfc7f;
+  background: linear-gradient(
+    scale-color(#bdfc7f, $alpha: -100%) 0%,
+    scale-color(#bdfc7f, $alpha: -90%) 100%
+  );
+}
+
+.multistep {
+  padding-bottom: 18px;
+}
+
+.redeemed {
+  border-color: #c4b578;
+  color: #c4b578;
+  background: transparent;
+  p {
+    color: scale-color(#c4b578, $lightness: -40%);
+  }
+}
+
+.trackedInDim {
+  position: relative;
+  border-color: #f37423;
+  outline: 1px solid #f37423;
+  background: transparent;
+}
+
+.gildingTriumph {
+  background-image: linear-gradient(
+      to left bottom,
+      transparent 25%,
+      scale-color(#a1a2a2, $alpha: -80%) 1px,
+      transparent calc(25% + 1px)
+    ),
+    linear-gradient(
+      to left top,
+      transparent 25%,
+      scale-color(#a1a2a2, $alpha: -80%) 1px,
+      transparent calc(25% + 1px)
+    );
+  // To increase the number of chevrons in the background
+  // decrease the first number of `background-size`, and vice versa for
+  // decreasing.
+  background-size: 60px 100%;
+  // The following offset and repeat settings
+  // prevent the two gradients making up the chevron pattern
+  // (which both use reduced opacity colors) from overlapping
+  // at the 0 point, which prevents that one point from being
+  // more saturated than the rest of the lines.
+  // There is no visible gap.
+  background-position: 0 0, 0 2px;
+  background-repeat: repeat-x;
+}
+
+.redeemed.gildingTriumph {
+  border-color: $gilded-triumph-border-color;
+  background-image: linear-gradient(
+      to left bottom,
+      transparent 25%,
+      scale-color($gilded-triumph-border-color, $alpha: -80%) 1px,
+      transparent calc(25% + 1px)
+    ),
+    linear-gradient(
+      to left top,
+      transparent 25%,
+      scale-color($gilded-triumph-border-color, $alpha: -80%) 1px,
+      transparent calc(25% + 1px)
+    );
+}
+
+.glow {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.trackedInDim .glow {
+  display: block;
+  background: linear-gradient(
+    scale-color($orange, $alpha: -100%) 0%,
+    scale-color($orange, $alpha: -80%) 100%
+  );
+}
+
+.redeemed.gildingTriumph .glow {
+  display: block;
+  background: linear-gradient(
+    scale-color($gilded-triumph-border-color, $alpha: -100%) 80%,
+    scale-color($gilded-triumph-border-color, $alpha: -90%) 100%
+  );
+}
+
+.redeemed .gildingText {
+  opacity: 0.5;
+}
+
+.dimTrackedIcon {
+  position: absolute;
+  display: none;
+  right: calc(50px + var(--item-size) / 3.1);
+  top: -9px;
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+  padding: 8px;
+  transition: transform 300ms ease-in-out;
+  transform-origin: center 8px;
+  opacity: 0.7;
+  &:hover {
+    transform: scale(1.5);
+  }
+  img {
+    width: calc(var(--item-size) / 3.1) !important;
+    height: auto !important;
+  }
+  @media (hover: none) {
+    display: block;
+    opacity: 0.7;
+  }
+  .trackedInDim & {
+    display: block;
+    opacity: 1;
+    top: -10px;
+  }
+  .triumphRecord:hover & {
+    display: block;
+    opacity: 0.7;
+  }
+}
+
+.icon {
+  width: 40px;
+  height: auto;
+  flex-shrink: 0;
+  margin-right: 8px;
+}
+
+.info {
+  flex: 1;
+  position: relative;
+}
+
+.recordLore {
+  img {
+    margin-right: 4px;
+    vertical-align: bottom;
+  }
+}
+
+.objectives {
+  margin-top: 8px;
+}
+
+.score {
+  float: right;
+  color: #a1a2a2;
+  margin-left: 4px;
+  :global(.catalysts) & {
+    display: none;
+  }
+
+  .currentScore {
+    color: white;
+    font-weight: bold;
+  }
+
+  .redeemed & {
+    display: none;
+  }
+}
+
+.trackedIcon {
+  position: absolute;
+  display: block;
+  width: calc(var(--item-size) / 3.1) !important;
+  height: auto !important;
+  right: 50px;
+  top: -2px;
+}
+
+.interval {
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.intervalUnlocked {
+  background-color: white;
+}
+.intervalRedeemed {
+  background-color: $xp;
+}
+
+.intervalContainer {
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+
+  &.complete {
+    background-color: $xp;
+  }
+
+  .redeemed & {
+    background-color: scale-color(#c4b578, $lightness: -20%) !important;
+  }
+}
