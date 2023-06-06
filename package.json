@@ -1,16 +1,16 @@
 {
   "name": "@modular-rocks/metrics",
-  "version": "0.1.0-development",
+  "version": "0.2.0-development",
   "description": "Code quality metrics for Javascript/Typescript",
   "main": "./dist/index.js",
   "exports": {
     ".": {
-      "types": "./dist/types.d.ts",
-      "default": "./dist/index.js"
+      "default": "./dist/index.js",
+      "types": "./dist/declarations.d.ts"
     },
     "./package.json": "./package.json"
   },
-  "types": "./dist/types.d.ts",
+  "types": "./dist/declarations.d.ts",
   "type": "module",
   "engines": {
     "node": "16.x"

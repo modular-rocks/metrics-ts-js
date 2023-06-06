@@ -19,7 +19,7 @@ export default (opts: Opts) => {
   const operatorMap = new Map();
   const operandMap = new Map();
 
-  const countOperator = (operator: ASTNode) => {
+  const countOperator = (operator: ASTNode | string) => {
     if (!operatorMap.has(operator)) {
       n1++;
     }
@@ -27,7 +27,7 @@ export default (opts: Opts) => {
     operatorMap.set(operator, (operatorMap.get(operator) || 0) + 1);
   };
 
-  const countOperand = (operand: ASTNode) => {
+  const countOperand = (operand: ASTNode | string) => {
     if (!operandMap.has(operand)) {
       n2++;
     }
