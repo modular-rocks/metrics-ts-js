@@ -1,19 +1,14 @@
-import run from '../../../maintainability'
+import run from '../..';
 
-import bulkTest from '../../../lib/bulk-test'
+import bulkTest from '../../../lib/bulk-test';
 
 const opts = {
-  includeBooleans: false
-}
+  includeBooleans: false,
+};
 
-describe("Maintainability of multiple files", () => {
-  test("Load all files in the codebase and benchmark against data", () => {
-    const [results, data] = bulkTest(run, __dirname, opts)
-    expect(results).toEqual(data)
+describe('Maintainability of multiple files', () => {
+  test('Load all files in the codebase and benchmark against data', () => {
+    const [results, data] = bulkTest(run, __dirname, opts);
+    expect(results).toEqual(data);
   });
 });
-
-
-
-
-

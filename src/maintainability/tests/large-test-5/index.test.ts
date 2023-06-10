@@ -1,17 +1,14 @@
-import code from './code'
-import run from '../../../maintainability'
-const opts = {
-  code
-}
+import code from './code';
+import run from '../..';
 
-describe("Maintainability", () => {
-  test("test 5", () => {
-    const expected = 77.95707538508954
+const opts = {
+  code,
+};
+
+describe('Maintainability', () => {
+  test('test 5', () => {
+    const expected = 77.95707538508954;
 
     expect(run(opts)).toEqual(expected);
   });
 });
-
-
-
-

@@ -301,4 +301,4 @@ function StartCompareButton({ filter, items }: { filter: string; items: DimItem[
       <AppIcon icon={compareIcon} />
     </a>
   );
-}`
+}`;

@@ -1,20 +1,17 @@
-import code from './code'
-import run from '../../../lcom'
-const opts = {
-  code
-}
+import code from './code';
+import run from '../..';
 
-describe("Lcom", () => {
-  test("test 7", () => {
+const opts = {
+  code,
+};
+
+describe('Lcom', () => {
+  test('test 7', () => {
     const expected = {
-      "cohesion": 1.5, 
-      "lcom": 0.75
-    }
+      cohesion: 1.5,
+      lcom: 0.75,
+    };
 
     expect(run(opts)).toEqual(expected);
   });
 });
-
-
-
-

@@ -30,4 +30,4 @@ export function handleAuthErrors(e: Error): ThunkResult {
       dispatch(loggedOut());
     }
   };
-}`
+}`;

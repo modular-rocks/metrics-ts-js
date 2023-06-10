@@ -15,4 +15,4 @@ export default React.memo(({ children, ...divProps }: React.HTMLAttributes<HTMLD
       <div className={styles.cover} />
     </>
   );
-});`
+});`;
