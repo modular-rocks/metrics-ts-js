@@ -1,6 +1,6 @@
-const fs = require('fs');
-const { resolve } = require('path');
+import { resolve } from 'path';
+import { createWriteStream } from 'fs';
 
 export default (dirname: string, data: any[][]) => {
-  fs.createWriteStream(resolve(dirname, 'data.json')).write(JSON.stringify(data));
+  createWriteStream(resolve(dirname, 'data.json')).write(JSON.stringify(data));
 };

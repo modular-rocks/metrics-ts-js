@@ -19,6 +19,7 @@
     "dist"
   ],
   "scripts": {
+    "prebuild": "yarn lint",
     "build": "tsc -p tsconfig.prod.json",
     "prepublishOnly": "npm run build",
     "test": "jest",

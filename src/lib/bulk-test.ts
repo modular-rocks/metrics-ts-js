@@ -8,14 +8,14 @@ const relativePath: string = '../../../../test-project/src/app/';
 export default (run: Function, dirname: string, opts: Opts) => {
   const [fullpath, extensions, ignoredExtensions, ignoreTests] = basicConfig(resolve(dirname, relativePath));
   const fileNames: string[] = collect(fullpath, extensions, ignoredExtensions, ignoreTests);
-  const files: CodeStore[] = fileNames.map((fullpath: string) => [fullpath, read(fullpath)]);
+  const files: CodeStore[] = fileNames.map((fileFullPath: string) => [fileFullPath, read(fileFullPath)]);
   const data: Result[] = JSON.parse(read(resolve(dirname, './data.json')));
-
   const results: Result[] = [];
-  files.map((x: CodeStore) => {
-    const [fullpath, code] = x;
-    opts.code = code.toString();
-    const result: Result = [fullpath.replace(process.cwd(), ''), run(opts)];
+
+  files.forEach((x: CodeStore) => {
+    const [fileFullPath, code] = x;
+    const optsClone = { ...opts, code: code.toString() };
+    const result: Result = [fileFullPath.replace(process.cwd(), ''), run(optsClone)];
     results.push(result);
   });
 

@@ -13,6 +13,7 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
+    '@typescript-eslint/no-require-imports': 'error',
     'prettier/prettier': [
       'error',
       {},

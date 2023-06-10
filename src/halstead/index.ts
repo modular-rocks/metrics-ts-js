@@ -1,9 +1,8 @@
+import Traverse from '@babel/traverse';
 import parser from '../lib/parser';
 
-const Traverse = require('@babel/traverse');
-
 const clean = (variable: number) => {
-  if (isNaN(variable) || variable === Infinity || variable === -Infinity) {
+  if (Number.isNaN(variable) || variable === Infinity || variable === -Infinity) {
     return 1;
   }
   return variable;
@@ -22,21 +21,21 @@ export default (opts: Opts) => {
 
   const countOperator = (operator: ASTNode | string) => {
     if (!operatorMap.has(operator)) {
-      n1++;
+      n1 += 1;
     }
-    N1++;
+    N1 += 1;
     operatorMap.set(operator, (operatorMap.get(operator) || 0) + 1);
   };
 
   const countOperand = (operand: ASTNode | string) => {
     if (!operandMap.has(operand)) {
-      n2++;
+      n2 += 1;
     }
-    N2++;
+    N2 += 1;
     operandMap.set(operand, (operandMap.get(operand) || 0) + 1);
   };
 
-  Traverse.default(ast, {
+  Traverse(ast, {
     BinaryExpression(path: ASTNode) {
       countOperator(path.node.operator);
       countOperand(path.node.left);

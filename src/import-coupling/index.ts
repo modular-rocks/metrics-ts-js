@@ -1,6 +1,5 @@
+import Traverse from '@babel/traverse';
 import parser from '../lib/parser';
-
-const Traverse = require('@babel/traverse');
 
 interface Imports {
   [name: string]: string;
@@ -15,7 +14,7 @@ export default (opts: Opts) => {
   }
 
   const imports: Imports = {};
-  Traverse.default(ast, {
+  Traverse(ast, {
     ImportDeclaration(path: ASTNode) {
       const source = path.node.source.value;
       imports[source] = source;

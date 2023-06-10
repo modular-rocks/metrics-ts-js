@@ -1,13 +1,12 @@
+import Traverse from '@babel/traverse';
 import parser from '../lib/parser';
-
-const Traverse = require('@babel/traverse');
 
 export default (opts: Opts) => {
   const ast = parser(opts);
 
   const nodeBindingMap = new Map();
 
-  Traverse.default(ast, {
+  Traverse(ast, {
     enter(path: ASTNode) {
       if (path.parent.type === 'Program') {
         if (!nodeBindingMap.has(path.node)) {
@@ -30,6 +29,7 @@ export default (opts: Opts) => {
   let sharedCount = 0;
   let unsharedCount = 0;
 
+  /* eslint-disable no-restricted-syntax */
   for (const [nodeX, bindingsX] of nodeBindingMap.entries()) {
     for (const binding of bindingsX) {
       let shared = false;
@@ -40,18 +40,19 @@ export default (opts: Opts) => {
         }
       }
       if (shared) {
-        sharedCount++;
+        sharedCount += 1;
       } else {
-        unsharedCount++;
+        unsharedCount += 1;
       }
     }
   }
+  /* eslint-enable no-restricted-syntax */
 
   const cohesion = Math.max(0, sharedCount / nodeBindingMap.size);
   const lcom = Math.max(0, unsharedCount / nodeBindingMap.size);
 
   return {
-    cohesion: isNaN(cohesion) ? 0 : cohesion,
-    lcom: isNaN(lcom) ? 0 : lcom,
+    cohesion: Number.isNaN(cohesion) ? 0 : cohesion,
+    lcom: Number.isNaN(lcom) ? 0 : lcom,
   };
 };

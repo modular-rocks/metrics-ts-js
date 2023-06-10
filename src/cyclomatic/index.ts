@@ -1,6 +1,5 @@
+import Traverse from '@babel/traverse';
 import parser from '../lib/parser';
-
-const Traverse = require('@babel/traverse');
 
 export default (opts: Opts) => {
   const ast = parser(opts);
@@ -9,31 +8,34 @@ export default (opts: Opts) => {
 
   const visitor = {
     'IfStatement|SwitchCase|ConditionalExpression|WhileStatement|ForStatement|DoWhileStatement|ForOfStatement|ForInStatement|TryStatement':
-      function () {
-        complexity++;
+      () => {
+        complexity += 1;
       },
-    'FunctionDeclaration|FunctionExpression|ArrowFunctionExpression|ObjectMethod|ClassMethod': function (
+    'FunctionDeclaration|FunctionExpression|ArrowFunctionExpression|ObjectMethod|ClassMethod': function x(
       path: ASTNode
     ) {
-      complexity++;
+      complexity += 1;
+      /* eslint-disable @typescript-eslint/no-use-before-define */
+      // TODO: This must be fixed!
       path.traverse(innerVisitor);
+      /* eslint-enable @typescript-eslint/no-use-before-define */
     },
     CatchClause(path: ASTNode) {
       if (path.node.body.body.length > 0) {
-        complexity++;
+        complexity += 1;
       }
     },
     LogicalExpression() {
-      complexity++;
+      complexity += 1;
     },
     BooleanLiteral() {
-      if (opts.includeBooleans) complexity++;
+      if (opts.includeBooleans) complexity += 1;
     },
     AssignmentExpression(path: ASTNode) {
-      if (path.node.operator === '??') complexity++;
+      if (path.node.operator === '??') complexity += 1;
     },
     'AssignmentPattern|ObjectPattern|ArrayPattern': () => {
-      complexity++;
+      complexity += 1;
     },
   };
 
@@ -43,7 +45,7 @@ export default (opts: Opts) => {
   delete (innerVisitor as any).FunctionExpression;
   delete (innerVisitor as any).ClassMethod;
 
-  Traverse.default(ast, visitor);
+  Traverse(ast, visitor);
 
   return complexity;
 };
