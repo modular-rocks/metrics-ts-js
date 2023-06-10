@@ -1,5 +1,6 @@
-const Traverse = require("@babel/traverse")
-import parser from "../lib/parser";
+import parser from '../lib/parser';
+
+const Traverse = require('@babel/traverse');
 
 export default (opts: Opts) => {
   const ast = parser(opts);
@@ -28,13 +29,9 @@ export default (opts: Opts) => {
   }
 
   if (scopes.size === 0) {
-    return 0
+    return 0;
   }
 
   const coupling = sharedIdentifierCount / scopes.size;
   return coupling;
-}
-
-
-
-
+};

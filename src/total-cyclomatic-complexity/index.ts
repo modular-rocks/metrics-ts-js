@@ -1,15 +1,17 @@
-const Traverse = require("@babel/traverse")
-import parser from "../lib/parser";
+import parser from '../lib/parser';
+
+const Traverse = require('@babel/traverse');
 
 export default (opts: Opts) => {
   const ast = parser(opts);
 
   let complexity = 0;
   Traverse.default(ast, {
-    'IfStatement|SwitchCase|ConditionalExpression|WhileStatement|ForStatement|DoWhileStatement|ForOfStatement|ForInStatement|TryStatement|CatchClause'() {
-      complexity++;
-    },
-    'FunctionDeclaration|FunctionExpression|ArrowFunctionExpression|ObjectMethod|ClassMethod'() {
+    'IfStatement|SwitchCase|ConditionalExpression|WhileStatement|ForStatement|DoWhileStatement|ForOfStatement|ForInStatement|TryStatement|CatchClause':
+      function () {
+        complexity++;
+      },
+    'FunctionDeclaration|FunctionExpression|ArrowFunctionExpression|ObjectMethod|ClassMethod': function () {
       complexity++;
     },
     LogicalExpression(path: ASTNode) {
@@ -30,13 +32,8 @@ export default (opts: Opts) => {
     },
     'AssignmentPattern|ObjectPattern|ArrayPattern': () => {
       complexity++;
-    }
+    },
   });
 
   return complexity;
 };
-
-
-
-
-

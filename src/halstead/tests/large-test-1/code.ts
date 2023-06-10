@@ -194,4 +194,4 @@ function useVisibilityRefresh() {
       document.removeEventListener('visibilitychange', visibilityHandler);
     };
   }, [hasSearchQuery, refreshProfileOnVisible]);
-}`
+}`;

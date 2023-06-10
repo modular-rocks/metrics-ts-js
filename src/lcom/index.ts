@@ -1,5 +1,6 @@
-const Traverse = require("@babel/traverse")
-import parser from "../lib/parser";
+import parser from '../lib/parser';
+
+const Traverse = require('@babel/traverse');
 
 export default (opts: Opts) => {
   const ast = parser(opts);
@@ -51,6 +52,6 @@ export default (opts: Opts) => {
 
   return {
     cohesion: isNaN(cohesion) ? 0 : cohesion,
-    lcom: isNaN(lcom) ? 0 : lcom
+    lcom: isNaN(lcom) ? 0 : lcom,
   };
-}
+};

@@ -1,5 +1,6 @@
-const Traverse = require("@babel/traverse")
-import parser from "../lib/parser";
+import parser from '../lib/parser';
+
+const Traverse = require('@babel/traverse');
 
 export default (opts: Opts) => {
   const ast = parser(opts);
@@ -11,8 +12,8 @@ export default (opts: Opts) => {
         const { start, end } = path.node.loc;
         linesOfCode += end.line - start.line + 1;
       }
-    }
+    },
   });
 
-  return linesOfCode
-}
+  return linesOfCode;
+};

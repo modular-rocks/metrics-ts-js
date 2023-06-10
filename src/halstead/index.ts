@@ -1,5 +1,6 @@
-const Traverse = require("@babel/traverse");
-import parser from "../lib/parser";
+import parser from '../lib/parser';
+
+const Traverse = require('@babel/traverse');
 
 const clean = (variable: number) => {
   if (isNaN(variable) || variable === Infinity || variable === -Infinity) {
@@ -71,7 +72,7 @@ export default (opts: Opts) => {
       });
     },
     VariableDeclaration(path: ASTNode) {
-      const declarations = path.node.declarations;
+      const { declarations } = path.node;
       declarations.forEach((declaration: ASTNode) => {
         countOperator(declaration.id.name);
         if (declaration.init) {
@@ -89,7 +90,7 @@ export default (opts: Opts) => {
     },
     Literal(path: ASTNode) {
       countOperand(path.node.value);
-    }
+    },
   });
 
   // https://en.wikipedia.org/wiki/Halstead_complexity_measures
@@ -101,6 +102,6 @@ export default (opts: Opts) => {
   const effort = clean(difficulty * volume);
   const bugs = clean(effort ** (2 / 3) / 3000);
   const time = clean(effort / 18);
-  
+
   return { vocabulary, length, volume, difficulty, effort, bugs, time };
 };

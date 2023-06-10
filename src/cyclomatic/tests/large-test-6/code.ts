@@ -123,4 +123,4 @@ export default function GearPower() {
 //     <BungieImage src={i.icon} />
 //   </span>
 // )}
-// </ItemPopupTrigger>`
+// </ItemPopupTrigger>`;

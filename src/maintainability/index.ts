@@ -1,5 +1,5 @@
-import totalCyclomaticComplexity from "../total-cyclomatic-complexity"
-import loc from '../loc'
+import totalCyclomaticComplexity from '../total-cyclomatic-complexity';
+import loc from '../loc';
 
 export default (opts: Opts) => {
   const cyclomaticComplexity = totalCyclomaticComplexity(opts);
@@ -14,14 +14,14 @@ export default (opts: Opts) => {
   const logLinesOfCode = Math.log(linesOfCode);
   const logCyclomaticComplexity = Math.log(cyclomaticComplexity + 1);
 
-  const rawMaintainabilityIndex = indexUpperLimit - volumeFactor * logLinesOfCode - complexityFactor * cyclomaticComplexity - effortFactor * logCyclomaticComplexity;
+  const rawMaintainabilityIndex =
+    indexUpperLimit -
+    volumeFactor * logLinesOfCode -
+    complexityFactor * cyclomaticComplexity -
+    effortFactor * logCyclomaticComplexity;
 
   // Convert to a scale from 0 to 100 and bound the values.
-  const scaledMaintainabilityIndex = Math.max(0, Math.min(100, rawMaintainabilityIndex * 100 / indexUpperLimit));
+  const scaledMaintainabilityIndex = Math.max(0, Math.min(100, (rawMaintainabilityIndex * 100) / indexUpperLimit));
 
   return scaledMaintainabilityIndex;
 };
-
-
-
-
