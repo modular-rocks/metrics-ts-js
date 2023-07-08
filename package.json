@@ -54,7 +54,8 @@
     "url": "https://github.com/modular-rocks/metrics-ts-js.git"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org"
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   },
   "dependencies": {
     "@babel/core": "^7.22.5",
