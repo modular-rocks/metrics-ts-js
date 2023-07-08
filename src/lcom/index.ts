@@ -1,4 +1,4 @@
-import Traverse from '@babel/traverse';
+import Traverse, { NodePath } from '@babel/traverse';
 import parser from '../lib/parser';
 
 export default (opts: Opts) => {
@@ -7,7 +7,7 @@ export default (opts: Opts) => {
   const nodeBindingMap = new Map();
 
   Traverse(ast, {
-    enter(path: ASTNode) {
+    enter(path: NodePath) {
       if (path.parent.type === 'Program') {
         if (!nodeBindingMap.has(path.node)) {
           nodeBindingMap.set(path.node, new Set());

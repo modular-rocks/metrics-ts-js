@@ -1,4 +1,4 @@
-declare module '@modular-rocks/metrics';
+declare module '@modular-rocks/metrics-ts-js';
 
 interface ASTNode {
   [property: string]: any;

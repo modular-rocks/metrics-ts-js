@@ -1,4 +1,4 @@
-import Traverse from '@babel/traverse';
+import Traverse, { NodePath } from '@babel/traverse';
 import parser from '../lib/parser';
 
 const clean = (variable: number) => {
@@ -19,7 +19,7 @@ export default (opts: Opts) => {
   const operatorMap = new Map();
   const operandMap = new Map();
 
-  const countOperator = (operator: ASTNode | string) => {
+  const countOperator = (operator: NodePath | string) => {
     if (!operatorMap.has(operator)) {
       n1 += 1;
     }
@@ -27,7 +27,7 @@ export default (opts: Opts) => {
     operatorMap.set(operator, (operatorMap.get(operator) || 0) + 1);
   };
 
-  const countOperand = (operand: ASTNode | string) => {
+  const countOperand = (operand: NodePath | string) => {
     if (!operandMap.has(operand)) {
       n2 += 1;
     }
@@ -66,7 +66,7 @@ export default (opts: Opts) => {
       const args = path.node.arguments;
       countOperator(path.node.callee);
 
-      args.forEach((arg: ASTNode) => {
+      args.forEach((arg: string | NodePath) => {
         countOperand(arg);
       });
     },

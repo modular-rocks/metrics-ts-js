@@ -1,6 +1,6 @@
 {
-  "name": "@modular-rocks/metrics",
-  "version": "0.2.0-development",
+  "name": "@modular-rocks/metrics-ts-js",
+  "version": "0.2.1-development",
   "description": "Code quality metrics for Javascript/Typescript",
   "main": "./dist/index.js",
   "exports": {
@@ -48,10 +48,10 @@
   },
   "author": "Alex Dollery (DolNpm/DolGit)",
   "homepage": "",
-  "license": "",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/modular-rocks/metrics.git"
+    "url": "https://github.com/modular-rocks/metrics-ts-js.git"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"

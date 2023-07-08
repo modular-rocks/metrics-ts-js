@@ -1,4 +1,4 @@
-import Traverse from '@babel/traverse';
+import Traverse, { NodePath } from '@babel/traverse';
 import parser from '../lib/parser';
 
 export default (opts: Opts) => {
@@ -12,7 +12,7 @@ export default (opts: Opts) => {
         complexity += 1;
       },
     'FunctionDeclaration|FunctionExpression|ArrowFunctionExpression|ObjectMethod|ClassMethod': function x(
-      path: ASTNode
+      path: NodePath
     ) {
       complexity += 1;
       /* eslint-disable @typescript-eslint/no-use-before-define */

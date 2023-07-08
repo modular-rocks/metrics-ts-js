@@ -2,11 +2,11 @@
 
 ## Installation
 
-`npm install @modular-rocks/metrics`
+`npm install @modular-rocks/metrics-ts-js`
 
 or 
 
-`yarn add @modular-rocks/metrics` 
+`yarn add @modular-rocks/metrics-ts-js` 
 
 
 ## Metrics 
@@ -136,6 +136,10 @@ importCoupling(opts)
 
 ```
 
+## Test Project
+
+The code in the test-project folder is a snapshot of the code from [DIM](https://github.com/DestinyItemManager/DIM), containing 600+ components/modules.
+
 ## License
 
-To be licensed, either MIT or Apache 2.0. Lets decide.
+Apache 2.0
